@@ -1,3 +1,10 @@
+nav{
+	background: red;
+}
 .login{
 	margin-top: 25px;
+}
+.evaluar{
+	max-width: 800px;
+	margin-top: 30px;
 }
