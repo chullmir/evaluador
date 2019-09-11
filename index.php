@@ -13,6 +13,6 @@
 	<?php require_once 'componentes/navbar.php'; ?>
 
 	
-	
+	<?php require_once 'scripts/bootstrap_scripts.php'; ?>
 </body>
 </html>
