@@ -1,0 +1,10 @@
+TABLAS
+
+Database: TN
+
+Tabla: evaluacion_redactores
+id, evalua, evaluado, mes, actitud1, actitud2, actitud3, redaccion1, redaccion2, redaccion3, redaccion4, rigurosidad1, rigurosidad2
+
+Tabla: users
+uid, name, lastname, email, area, password
+
