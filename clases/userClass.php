@@ -16,6 +16,8 @@ class userClass{
 			$db = null;
 			if($count) {
 				$_SESSION['uid']=$data->uid; // Storing user session value
+				$_SESSION['name']=$data->name;
+				$_SESSION['profile']=$data->profile;
 				return true;
 			} else {
 				return false;

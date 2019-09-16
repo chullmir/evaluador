@@ -14,15 +14,23 @@ $pageTitle = "Registrarse";
 			<div class="form-group">
 				<label for="inputName">Nombre</label>
 				<input type="text" name="nameReg" autocomplete="off" id="inputName" class="form-control" placeholder="Nombre">
+			</div>
+			<div class="form-group">
 				<label for="inputLastname">Apellido</label>
 				<input type="text" name="lastnameReg" autocomplete="off" id="inputLastname" class="form-control" placeholder="Apellido">
+			</div>
+				
+			<div class="form-group">
 				<label for="inputEmail">Email</label>
 				<input type="text" name="emailReg" autocomplete="off" id="inputEmail" class="form-control" placeholder="Email">
+			</div>
+
+			<div class="form-group">
 				<label for="inputPassword">Password</label>
 				<input type="password" name="passwordReg" autocomplete="off" id="inputPassword" class="form-control" placeholder="Contraseña">
+			</div>
 				<div class="errorMsg"><?php echo ($_POST) ? $errorMsgReg : ''; ?></div>
 				<input type="submit" class="button btn btn-primary" name="signupSubmit" value="Signup">
-			</div>
 		</form>
 	</div>
 

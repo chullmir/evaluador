@@ -4,7 +4,7 @@ define('DB_SERVER','localhost');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','');
 define('DB_DATABASE','tn');
-define('BASE_URL','http://localhost/evaluador');
+define('BASE_URL','http://localhost/evaluador/');
 
 function getDB(){
 	$dbhost=DB_SERVER;

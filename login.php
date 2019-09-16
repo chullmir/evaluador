@@ -1,14 +1,7 @@
 <?php 
 
-require_once 'functions/db_connection.php';
+// require_once 'functions/db_connection.php';
 $pageTitle = "Login";
-$user_email = "";
-$user_password = "";
-
-if ($_POST) {
-	# code...
-}
-
 
  ?>
 
@@ -19,15 +12,19 @@ if ($_POST) {
 </head>
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
-	<div id="login">
+	<div id="login" class="container">
 		<h3>Login</h3>
 		<form method="post" action="index.php" name="login">
-			<label>Email</label>
-			<input type="text" name="userEmail" autocomplete="off" />
-			<label>Password</label>
-			<input type="password" name="password" autocomplete="off"/>
-			<div class="errorMsg"><?php echo $errorMsgLogin; ?></div>
-			<input type="submit" class="button" name="loginSubmit" value="Login">
+			<div class="form-group">			
+				<label>Email</label>
+				<input type="text" name="userEmail" autocomplete="off" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<input type="password" name="password" autocomplete="off" class="form-control">
+			</div>
+			<div class="errorMsg"><?php echo ($_POST) ? $errorMsgLogin : ''; ?></div>
+			<input type="submit" class="button btn btn-primary" name="loginSubmit" value="Login">
 		</form>
 	</div>
 	<!-- <div class="container login">
