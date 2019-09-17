@@ -33,18 +33,20 @@ if (!empty($_POST['signupSubmit']))
 if (!empty($_POST['loginSubmit'])) {
 	$usernameEmail=$_POST['userEmail'];
 	$password=$_POST['password'];
-	if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {
-		$uid=$userClass->userLogin($usernameEmail,$password);
-		if($uid) {
-			$url=BASE_URL.'home.php';
-			header("Location: $url"); // Page redirecting to home.php 
-		} else {
-			$errorMsgLogin="Please check login details.";
-		}
-	}
+	// if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {
+	$uid=$userClass->userLogin($usernameEmail,$password);
+	
+		// if($uid) {
+		// 	$url=BASE_URL.'home.php';
+		// 	header("Location: $url"); // Page redirecting to home.php 
+		// } else {
+		// 	$errorMsgLogin="Please check login details.";
+		// }
+	
 }
-var_dump($_SESSION);
-
+// echo "<pre>";
+// var_dump($_SESSION);
+// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -55,14 +57,7 @@ var_dump($_SESSION);
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
 
-	
-	<?php
-	
-
-	?>
-	
-
-
+	<h1>Bienvenido <?php echo ($_SESSION['name']) ? $_SESSION['name'] : "invitado"  ?></h1>
 
 
 	<?php require_once 'scripts/bootstrap_scripts.php'; ?>

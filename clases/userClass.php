@@ -13,6 +13,7 @@ class userClass{
 			$stmt->execute();
 			$count=$stmt->rowCount();
 			$data=$stmt->fetch(PDO::FETCH_OBJ);
+			var_dump($data);
 			$db = null;
 			if($count) {
 				$_SESSION['uid']=$data->uid; // Storing user session value
@@ -49,6 +50,7 @@ class userClass{
 					$uid=$db->lastInsertId(); // Last inserted row id
 					$db = null;
 					$_SESSION['uid']=$uid;
+					$_SESSION['name']=$name;
 					return true;
 				} else {
 					$db = null;
