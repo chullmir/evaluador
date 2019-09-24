@@ -5,8 +5,7 @@ require_once 'clases/userClass.php';
 $userClass = new userClass();
 $errorMsgReg='';
 $errorMsgLogin='';
-
-
+$_SESSION['name'] = ($_SESSION['name'] ? $_SESSION['name'] : "");
 /* Signup Form */
 if (!empty($_POST['signupSubmit'])) 
 {
@@ -31,10 +30,10 @@ if (!empty($_POST['signupSubmit']))
 
 /* Login Form */
 if (!empty($_POST['loginSubmit'])) {
-	$usernameEmail=$_POST['userEmail'];
+	$userEmail=$_POST['userEmail'];
 	$password=$_POST['password'];
 	// if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {
-	$uid=$userClass->userLogin($usernameEmail,$password);
+	$uid=$userClass->userLogin($userEmail,$password);
 	
 		// if($uid) {
 		// 	$url=BASE_URL.'home.php';
@@ -56,10 +55,7 @@ if (!empty($_POST['loginSubmit'])) {
 </head>
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
-
-	<h1>Bienvenido <?php echo ($_SESSION['name']) ? $_SESSION['name'] : "invitado"  ?></h1>
-
-
+	<h1>Bienvenido <?php echo ($_SESSION['name'] ? $_SESSION['name'] : "invitado")  ?></h1>
 	<?php require_once 'scripts/bootstrap_scripts.php'; ?>
 </body>
 </html>

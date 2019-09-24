@@ -7,17 +7,17 @@ class userClass{
 		try{
 			$db = getDB();
 			$hash_password= hash('sha256', $password); //Password encryption 
-			$stmt = $db->prepare("SELECT uid FROM usuarios WHERE email=:userEmail AND password=:hash_password"); 
+			$stmt = $db->prepare("SELECT uid, name, area, profile FROM users WHERE email=:userEmail AND password=:hash_password"); 
 			$stmt->bindParam("userEmail", $userEmail,PDO::PARAM_STR) ;
 			$stmt->bindParam("hash_password", $hash_password,PDO::PARAM_STR) ;
 			$stmt->execute();
 			$count=$stmt->rowCount();
 			$data=$stmt->fetch(PDO::FETCH_OBJ);
-			var_dump($data);
 			$db = null;
 			if($count) {
 				$_SESSION['uid']=$data->uid; // Storing user session value
 				$_SESSION['name']=$data->name;
+				$_SESSION['area']=$data->area;
 				$_SESSION['profile']=$data->profile;
 				return true;
 			} else {
