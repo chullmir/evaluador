@@ -2,10 +2,13 @@
 $pageTitle = "Bienvenido";
 require_once 'functions/config.php';
 require_once 'clases/userClass.php';
+if (empty($_SESSION['name'])) {
+	header("Location:home.php");
+}
 $userClass = new userClass();
 $errorMsgReg='';
 $errorMsgLogin='';
-$_SESSION['name'] = ($_SESSION['name'] ? $_SESSION['name'] : "");
+// $_SESSION['name'] = ($_SESSION['name'] ? $_SESSION['name'] : "");
 /* Signup Form */
 if (!empty($_POST['signupSubmit'])) 
 {
@@ -55,7 +58,18 @@ if (!empty($_POST['loginSubmit'])) {
 </head>
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
-	<h1>Bienvenido <?php echo ($_SESSION['name'] ? $_SESSION['name'] : "invitado")  ?></h1>
+	<div class="container">
+		<h1>Bienvenido <?php echo (!empty($_SESSION['name']) ? $_SESSION['name'] : "invitado")  ?></h1>
+		<?php if (!empty($_SESSION['name'])): ?>
+			<p>Sector: <?php echo $_SESSION['area'] ?></p>
+			
+		<?php endif ?>
+
+		
+		
+	</div>
+	
+
 	<?php require_once 'scripts/bootstrap_scripts.php'; ?>
 </body>
 </html>

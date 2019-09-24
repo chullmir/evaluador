@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (empty($_SESSION)) {
+	header("Location: index.php");
+}
 $pageTitle = "Evaluar";
 if ($_POST) {
 	$nombre = "Prueba";
@@ -49,7 +53,11 @@ if ($_POST) {
 	<?php require_once 'componentes/navbar.php'; ?>
 
 	<div class="container evaluar">
-		<h2>Bienvenid@ [NOMBRE]</h2>
+		<?php 
+		echo "<pre>";
+		var_dump($_SESSION);
+		echo "</pre>"; ?>
+		<h2>Bienvenid@ <?= $_SESSION['name'] ?></h2>
 		
 		<form method="post">
 		

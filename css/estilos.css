@@ -1,7 +1,4 @@
 
-nav{
-	background: red;
-}
 .login{
 	margin-top: 25px;
 }
@@ -10,3 +7,10 @@ nav{
 	margin-top: 30px;
 }
 
+body nav{
+	background: #1a2849;
+	
+}
+body nav a{
+	color: #fff;
+}

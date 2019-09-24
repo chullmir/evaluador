@@ -1,4 +1,4 @@
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg">
 		<a class="navbar-brand" href="/evaluador/index.php"><img src="/evaluador/img/tn logo.png" alt="logo tn" width="50px"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -9,16 +9,21 @@
 					<a class="nav-link" href="index.php">Home</a>
 				</li>
 
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Evaluar
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="evaluar_redaccion.php">Redacción</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</li>
+				<?php if (!empty($_SESSION['name'])): ?>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Evaluar
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">	
+							<a class="dropdown-item" href="evaluar_redaccion.php">Redacción</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					
+				<?php endif ?>
+
+				
 				<?php if (empty($_SESSION['name'])): ?>
 					<li class="nav-item">
 						<a class="nav-link" href="login.php">Login</a>

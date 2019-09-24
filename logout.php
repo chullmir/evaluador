@@ -11,16 +11,17 @@ $pageTitle = "Logout";
 
 	require_once 'functions/config.php';
 	$session_uid='';
-	$_SESSION['uid']='';
-	$_SESSION['name']='';
-	$_SESSION['profile']=''; 
-	if(empty($session_uid) && empty($_SESSION['uid']))
-	{
-		$url=BASE_URL.'index.php';
+	session_destroy();
+	// $_SESSION['uid']='';
+	// $_SESSION['name']='';
+	// $_SESSION['area']=''; 
+	// $_SESSION['profile']=''; 
+	
+		$url=BASE_URL.'home.php';
 		header("Location: $url");
-	//echo "";
-	}
-
+	
+		
+	
 
 	?>
 
