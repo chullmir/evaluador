@@ -17,8 +17,9 @@ $pageTitle = "Logout";
 	// $_SESSION['area']=''; 
 	// $_SESSION['profile']=''; 
 	
-		$url=BASE_URL.'home.php';
-		header("Location: $url");
+		// $url=BASE_URL.'home.php';
+		// header("Location: $url");
+	header("Location:index.php")
 	
 		
 	

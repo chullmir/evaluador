@@ -25,11 +25,11 @@ class userClass{
 			} 
 		}
 		catch(PDOException $e) {
-		echo '{"error":{"text":'. $e->getMessage() .'}}';
+			echo '{"error":{"text":'. $e->getMessage() .'}}';
 		}
 	}
 	/* User Registration */
-	public function userRegistration($name, $lastname,$email,$password)
+	public function userRegistration($name, $lastname,$email,$area,$password)
 	{
 		try{
 			$db = getDB();
@@ -39,10 +39,11 @@ class userClass{
 			$count=$st->rowCount();
 			if($count<1)
 				{
-					$stmt = $db->prepare("INSERT INTO users(name,lastname,email,password) VALUES (:name,:lastname,:email,:hash_password)");
+					$stmt = $db->prepare("INSERT INTO users(name,lastname,email,area,password) VALUES (:name,:lastname,:email,:area,:hash_password)");
 					$stmt->bindParam("name", $name,PDO::PARAM_STR);
-					$stmt->bindParam("lastname", $lastname,PDO::PARAM_STR) ;
-					$stmt->bindParam("email", $email,PDO::PARAM_STR) ;
+					$stmt->bindParam("lastname", $lastname,PDO::PARAM_STR);
+					$stmt->bindParam("email", $email,PDO::PARAM_STR);
+					$stmt->bindParam("area", $area,PDO::PARAM_STR);
 					$hash_password= hash('sha256', $password); //Password encryption
 					$stmt->bindParam("hash_password", $hash_password,PDO::PARAM_STR) ;
 					
@@ -51,6 +52,7 @@ class userClass{
 					$db = null;
 					$_SESSION['uid']=$uid;
 					$_SESSION['name']=$name;
+					$_SESSION['area']=$area;
 					return true;
 				} else {
 					$db = null;

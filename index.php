@@ -2,9 +2,9 @@
 $pageTitle = "Bienvenido";
 require_once 'functions/config.php';
 require_once 'clases/userClass.php';
-if (empty($_SESSION['name'])) {
-	header("Location:home.php");
-}
+// if (empty($_SESSION['name'])) {
+// 	header("Location:home.php");
+// }
 $userClass = new userClass();
 $errorMsgReg='';
 $errorMsgLogin='';
@@ -15,12 +15,13 @@ if (!empty($_POST['signupSubmit']))
 	$name=$_POST['nameReg'];
 	$lastname=$_POST['lastnameReg'];
 	$email=$_POST['emailReg'];
+	$area=$_POST['areaReg'];
 	$password=$_POST['passwordReg'];
 	/* Regular expression check */
 	// $email_check = preg_match('~^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.([a-zA-Z]{2,4})$~i', $email);
 	// $password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
 
-	$uid=$userClass->userRegistration($name,$lastname,$email,$password);
+	$uid=$userClass->userRegistration($name,$lastname,$email,$area,$password);
 	// if($uid)
 	// {
 	// 	$url=BASE_URL.'home.php';
@@ -60,7 +61,7 @@ if (!empty($_POST['loginSubmit'])) {
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
 		<h1>Bienvenido <?php echo (!empty($_SESSION['name']) ? $_SESSION['name'] : "invitado")  ?></h1>
-		<?php if (!empty($_SESSION['name'])): ?>
+		<?php if (!empty($_SESSION['area'])): ?>
 			<p>Sector: <?php echo $_SESSION['area'] ?></p>
 			
 		<?php endif ?>

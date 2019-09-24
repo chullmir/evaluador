@@ -9,8 +9,12 @@
 					<a class="nav-link" href="index.php">Home</a>
 				</li>
 
-				<?php if (!empty($_SESSION['name'])): ?>
-					<li class="nav-item dropdown">
+				<?php if (!empty($_SESSION['area'])): ?>
+
+					<li class="nav-item">
+						<a class="nav-link" href="evaluar.php">Evaluar</a>
+					</li>
+					<!-- <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Evaluar
 						</a>
@@ -19,8 +23,14 @@
 							<a class="dropdown-item" href="#">Another action</a>
 							<a class="dropdown-item" href="#">Something else here</a>
 						</div>
-					</li>
+					</li> -->
 					
+				<?php endif ?>
+
+				<?php if ($_SESSION['profile']=="admin"): ?>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Personas</a>
+					</li>
 				<?php endif ?>
 
 				

@@ -26,6 +26,17 @@ $pageTitle = "Registrarse";
 			</div>
 
 			<div class="form-group">
+				<label for="selectSector">Sector</label>
+				<select class="form-control" id="selectSector" name="areaReg">
+					<option value="web">Web</option>
+					<option value="produccion">Producción</option>
+					<option value="camaras">Cámaras</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+
+			<div class="form-group">
 				<label for="inputPassword">Password</label>
 				<input type="password" name="passwordReg" autocomplete="off" id="inputPassword" class="form-control" placeholder="Contraseña">
 			</div>

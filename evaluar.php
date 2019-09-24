@@ -1,47 +1,36 @@
 <?php 
-session_start();
+require_once 'functions/config.php';
+require_once 'clases/formClass.php';
 if (empty($_SESSION)) {
 	header("Location: index.php");
 }
 $pageTitle = "Evaluar";
+$formClass = new formClass();
 
-// if ($_POST) {
-// 	$nombre = "Prueba";
+if ($_POST) {
 
-// 	$dbhost="localhost";
-// 	$dbuser="root";
-// 	$dbpass="";
-// 	$db="tn";
+	if (!empty($_POST['encuestaWebSubmit'])) {
+		$nombre = $_SESSION['name'];
+		$evaluado = $_POST['redactor'];
+		$mes = $_POST['mes'];
+		$actitud1 = $_POST['actitud1'];
+		$actitud2 = $_POST['actitud2'];
+		$actitud3 = $_POST['actitud3'];
+		$redaccion1 = $_POST['redaccion1'];
+		$redaccion2 = $_POST['redaccion2'];
+		$redaccion3 = $_POST['redaccion3'];
+		$redaccion4 = $_POST['redaccion4'];
+		$rigurosidad1 = $_POST['rigurosidad1'];
+		$rigurosidad2 = $_POST['rigurosidad2'];
 
-// 	try {
-// 		$conn = new PDO("mysql:host=$dbhost;dbname=$db",$dbuser,$dbpass);
-// 		// set the PDO error mode to exception
-// 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// 		$stmt = $conn->prepare("INSERT INTO evaluacion_redactores (evalua, evaluado, mes, actitud1, actitud2, actitud3, redaccion1, redaccion2, redaccion3, redaccion4, rigurosidad1, rigurosidad2) VALUES (:nombre, :redactor, :mes, :actitud1, :actitud2, :actitud3, :redaccion1, :redaccion2, :redaccion3, :redaccion4, :rigurosidad1, :rigurosidad2)");
-// 		$stmt->bindParam(':nombre',$nombre);
-// 		$stmt->bindParam(':redactor',$_POST["redactor"]);
-// 		$stmt->bindParam(':mes',$_POST["mes"]);
-// 		$stmt->bindParam(':actitud1',$_POST["actitud1"]);
-// 		$stmt->bindParam(':actitud2',$_POST["actitud2"]);
-// 		$stmt->bindParam(':actitud3',$_POST["actitud3"]);
-// 		$stmt->bindParam(':redaccion1',$_POST["redaccion1"]);
-// 		$stmt->bindParam(':redaccion2',$_POST["redaccion2"]);
-// 		$stmt->bindParam(':redaccion3',$_POST["redaccion3"]);
-// 		$stmt->bindParam(':redaccion4',$_POST["redaccion4"]);
-// 		$stmt->bindParam(':rigurosidad1',$_POST["rigurosidad1"]);
-// 		$stmt->bindParam(':rigurosidad2',$_POST["rigurosidad2"]);
-// 		$stmt->execute();
-// 		// $conn->exec($sql);
-// 		echo "Registro guardado exitosamente";
-// 	}
-// 	catch(PDOException $e)
-// 	{
-// 		echo $sql . "<br>" . $e->getMessage();
-// 	}
-// 	$conn = null;
-// }
-
-
+		$id=$formClass->encuestaWeb($nombre,$evaluado,$mes,$actitud1,$actitud2,$actitud3,$redaccion1,$redaccion2,$redaccion3,$redaccion4,$rigurosidad1,$rigurosidad2);
+	} elseif (!empty($_POST['encuestaCamarasSubmit'])) {
+		# code...
+	}
+}
+// echo "<pre>";
+// var_dump($_POST);
+// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,14 +46,14 @@ $pageTitle = "Evaluar";
 		<?php if ($_SESSION['area'] == "web"): ?>
 			<?php require_once 'encuestas/encuesta_web.php'; ?>
 		<?php endif ?>
-		<?php if ($_SESSION['area'] == "otro"): ?>
-			<?php echo "Encuesta Otro" ?>
+		<?php if ($_SESSION['area'] == "camaras"): ?>
+			<?php require_once 'encuestas/encuesta_camaras.php'; ?>
 		<?php endif ?>
 
 
 	</div>
 
 	
-	
+	<?php require_once 'functions/bootstrap_scripts.php'; ?>
 </body>
 </html>
