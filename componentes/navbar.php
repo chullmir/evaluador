@@ -15,6 +15,16 @@
 						<li class="nav-item">
 							<a class="nav-link" href="evaluar.php">Evaluar</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="resultados.php">Resultados</a>
+						</li>
+
+						<?php if (!empty($_SESSION['profile'])): ?>
+							<li class="nav-item">
+								<a class="nav-link" href="ajustes.php">Ajustes</a>
+							</li>
+							
+						<?php endif ?>
 						
 					<?php endif ?>
 				</span>
