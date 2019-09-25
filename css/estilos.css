@@ -1,4 +1,6 @@
-
+*{
+	box-sizing: border-box;
+}
 .login{
 	margin-top: 25px;
 }
@@ -9,8 +11,24 @@
 
 body nav{
 	background: #1a2849;
-	
 }
+
+
 body nav a{
 	color: #fff;
+}
+body nav a:hover{
+	color: #444444;
+}
+@media screen and (min-width: 992px){
+	body nav .navbar-collapse .navbar-nav{
+		display: flex;
+		width: 90%;
+		max-width: 1200px;
+		justify-content: space-between;
+	}
+	body nav .navbar-collapse .navbar-nav .nav-left,
+	body nav .navbar-collapse .navbar-nav .nav-right{
+		display: flex;
+	}
 }
