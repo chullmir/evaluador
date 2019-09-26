@@ -1,5 +1,6 @@
 <?php 
-
+require_once 'functions/config.php';
+$loginURL = $gClient->createAuthUrl();
 // require_once 'functions/db_connection.php';
 $pageTitle = "Login";
 
@@ -25,6 +26,7 @@ $pageTitle = "Login";
 			</div>
 			<div class="errorMsg"><?php echo ($_POST) ? $errorMsgLogin : ''; ?></div>
 			<input type="submit" class="button btn btn-primary" name="loginSubmit" value="Login">
+			<input type="button" class="btn btn-danger" onclick="window.location = '<?php echo $loginURL ?>'" value="Log in with Google">
 		</form>
 	</div>
 	<!-- <div class="container login">
