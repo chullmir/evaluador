@@ -28,9 +28,9 @@ if ($_POST) {
 		# code...
 	}
 }
-// echo "<pre>";
-// var_dump($_POST);
-// echo "</pre>";
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +41,10 @@ if ($_POST) {
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
 		<h2>Evaluador: <?= $_SESSION['name'] ?></h2>
+
+		<ul>
+			<li></li>
+		</ul>
 		
 <!-- 
 		<?php if ($_SESSION['area'] == "web"): ?>

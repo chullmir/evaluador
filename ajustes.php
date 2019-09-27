@@ -42,8 +42,9 @@ if (!empty($_POST['userCreateSubmit'])) {
 
 
 // echo "<pre>";
-// var_dump($_POST);
-// // var_dump($data);
+// var_dump($_SESSION);
+// // var_dump($_POST);
+// // // var_dump($data);
 // echo "</pre>";
  ?>
 
@@ -56,33 +57,49 @@ if (!empty($_POST['userCreateSubmit'])) {
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
 		<h1>Listado de Usuarios</h1>
+		
 
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th scope="col">Nombre</th>
-					<th scope="col">Apellido</th>
-					<th scope="col">Perfil</th>
-					<th scope="col">Editar</th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<?php foreach ($data as $key => $value): ?>
-					<tr>
-						<td><?= $data[$key]->name ?></td>
-						<td><?= $data[$key]->lastname ?></td>
-						<td><?= $data[$key]->profile ?></td>
-						<td><a href="#" class="btn btn-info">Editar</a> <a href="#" class="btn btn-danger">Borrar</a></td>
-					</tr>
-				<?php endforeach ?>
+		<div class="table-wrapper-scroll-y my-custom-scrollbar">
 			
-			</tbody>
-		</table>
+			<table id="myTable" class="table table-hover table-sm dataTable" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th class="th-sm" onclick="sortTable(0)">Nombre</th>
+						<th class="th-sm" onclick="sortTable(1)">Apellido</th>
+						<th class="th-sm" onclick="sortTable(2)">Perfil</th>
+						<th class="th-sm">Editar</th>
+					</tr>
+				</thead>
+
+			
+				<tbody>
+
+					<?php foreach ($data as $key => $value): ?>
+						<tr>
+							<td><?= $data[$key]->name ?></td>
+							<td><?= $data[$key]->lastname ?></td>
+							<td><?= $data[$key]->profile ?></td>
+							<td><a href="#" class="btn btn-info">Editar</a> <a href="#" class="btn btn-danger">Borrar</a></td>
+						</tr>
+					<?php endforeach ?>
+				
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Perfil</th>
+						<th>Editar</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+
 		<div class="comandos">
 			<a href="crear-usuario.php" class="btn btn-success">Nuevo Usuario</a>
 		</div>
 
 	</div>
+<script src="functions/sortTable.js"></script>
 </body>
 </html>

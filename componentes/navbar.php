@@ -17,7 +17,8 @@
 								<a class="nav-link" href="/evaluador/evaluar.php">Evaluar</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/evaluador/resultados.php">Resultados</a>
+								<!-- <a class="nav-link" href="/evaluador/resultados.php">Resultados</a> -->
+								<a class="nav-link" href="#">Resultados</a>
 							</li>
 					<?php } if ($_SESSION['profile'] == "superadmin") { ?>
 							<li class="nav-item">
