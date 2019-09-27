@@ -14,8 +14,9 @@ $pageTitle = "Login";
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div id="login" class="container">
-		<h3>Login</h3>
-		<form method="post" action="index.php" name="login">
+		
+		<!-- <form method="post" action="index.php" name="login">
+			<h3>Login</h3>
 			<div class="form-group">			
 				<label>Email</label>
 				<input type="text" name="userEmail" autocomplete="off" class="form-control">
@@ -26,8 +27,11 @@ $pageTitle = "Login";
 			</div>
 			<div class="errorMsg"><?php echo ($_POST) ? $errorMsgLogin : ''; ?></div>
 			<input type="submit" class="button btn btn-primary" name="loginSubmit" value="Login">
-			<input type="button" class="btn btn-danger" onclick="window.location = '<?php echo $loginURL ?>'" value="Log in with Google">
-		</form>
+		</form> -->
+		<a href="#" class="btn btn-danger btn-lg btn-block" onclick="window.location = '<?php echo $loginURL ?>'">
+			<i class="fab fa-google"></i>
+			Log in with Google
+		</a>
 	</div>
 	<!-- <div class="container login">
 		<h2>Ingresar</h2>

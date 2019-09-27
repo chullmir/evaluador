@@ -7,36 +7,34 @@
 			<ul class="navbar-nav">
 				<span class="nav-left">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.php">Home</a>
+						<a class="nav-link" href="/evaluador/index.php">Home</a>
 					</li>
 	
-					<?php if (!empty($_SESSION['area'])): ?>
-	
-						<li class="nav-item">
-							<a class="nav-link" href="evaluar.php">Evaluar</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="resultados.php">Resultados</a>
-						</li>
-
-						<?php if (!empty($_SESSION['profile'])): ?>
+					<?php 
+					if (!empty($_SESSION['profile'])) {
+						if ($_SESSION['profile'] != "redactor") { ?>
 							<li class="nav-item">
-								<a class="nav-link" href="ajustes.php">Ajustes</a>
+								<a class="nav-link" href="/evaluador/evaluar.php">Evaluar</a>
 							</li>
-							
-						<?php endif ?>
-						
-					<?php endif ?>
+							<li class="nav-item">
+								<a class="nav-link" href="/evaluador/resultados.php">Resultados</a>
+							</li>
+					<?php } if ($_SESSION['profile'] == "superadmin") { ?>
+							<li class="nav-item">
+								<a class="nav-link" href="/evaluador/ajustes.php">Ajustes</a>
+							</li>
+					<?php } } ?>
 				</span>
 
 				<span class="nav-right">
 					<?php if (empty($_SESSION['name'])) { ?>
 						<li class="nav-item">
-							<a class="nav-link" href="login.php">Login</a>
+							<a class="nav-link" href="/evaluador/login.php">Login</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="signup.php">Registrarse</a>
-						</li>
+
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="/evaluador/signup.php">Registrarse</a>
+						</li> -->
 					<?php } else { ?>
 						<li class="nav-item">
 							<a class="nav-link" href="#">
@@ -44,7 +42,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="logout.php">Logout</a>
+							<a class="nav-link" href="/evaluador/logout.php">Logout</a>
 						</li>
 					<?php } ?>
 				</span>

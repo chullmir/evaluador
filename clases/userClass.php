@@ -29,7 +29,7 @@ class userClass{
 		}
 	}
 	/* User Registration */
-	public function userRegistration($name, $lastname,$email,$area,$password)
+	public function userRegistration($name, $lastname,$email,$s_web,$s_produccionTn,$s_programasTn,$s_arribaArgentinos,$s_noti13,$s_telenoche,$s_sintesis,$s_cronista,$s_conduColum,$s_deportes,$s_prodEsp,$s_peJefes,$s_camaras,$s_edicion,$s_directores,$s_promociones,$s_archivo,$s_ingestaSat,$s_can,$s_mesa,$s_administracion,$profile)
 	{
 		try{
 			$db = getDB();
@@ -39,20 +39,43 @@ class userClass{
 			$count=$st->rowCount();
 			if($count<1)
 				{
-					$stmt = $db->prepare("INSERT INTO users(name,lastname,email,area,password) VALUES (:name,:lastname,:email,:area,:hash_password)");
+					$stmt = $db->prepare("INSERT INTO users(name,lastname,email,web,produccionTn,programasTn,arribaArgentinos,noti13,telenoche,sintesis,cronista,conduColum,deportes,prodEsp,peJefes,camaras,edicion,directores,promociones,archivo,ingestaSat,can,mesa,administracion,profile) VALUES (:name,:lastname,:email,:web,:produccionTn,:programasTn,:arribaArgentinos,:noti13,:telenoche,:sintesis,:cronista,:conduColum,:deportes,:prodEsp,:peJefes,:camaras,:edicion,:directores,:promociones,:archivo,:ingestaSat,:can,:mesa,:administracion,:profile)");
 					$stmt->bindParam("name", $name,PDO::PARAM_STR);
 					$stmt->bindParam("lastname", $lastname,PDO::PARAM_STR);
 					$stmt->bindParam("email", $email,PDO::PARAM_STR);
-					$stmt->bindParam("area", $area,PDO::PARAM_STR);
-					$hash_password= hash('sha256', $password); //Password encryption
-					$stmt->bindParam("hash_password", $hash_password,PDO::PARAM_STR) ;
+
+					$stmt->bindParam("web",$s_web,PDO::PARAM_STR);
+					$stmt->bindParam("produccionTn",$s_produccionTn,PDO::PARAM_STR);
+					$stmt->bindParam("programasTn",$s_programasTn,PDO::PARAM_STR);
+					$stmt->bindParam("arribaArgentinos",$s_arribaArgentinos,PDO::PARAM_STR);
+					$stmt->bindParam("noti13",$s_noti13,PDO::PARAM_STR);
+					$stmt->bindParam("telenoche",$s_telenoche,PDO::PARAM_STR);
+					$stmt->bindParam("sintesis",$s_sintesis,PDO::PARAM_STR);
+					$stmt->bindParam("cronista",$s_cronista,PDO::PARAM_STR);
+					$stmt->bindParam("conduColum",$s_conduColum,PDO::PARAM_STR);
+					$stmt->bindParam("deportes",$s_deportes,PDO::PARAM_STR);
+					$stmt->bindParam("prodEsp",$s_prodEsp,PDO::PARAM_STR);
+					$stmt->bindParam("peJefes",$s_peJefes,PDO::PARAM_STR);
+					$stmt->bindParam("camaras",$s_camaras,PDO::PARAM_STR);
+					$stmt->bindParam("edicion",$s_edicion,PDO::PARAM_STR);
+					$stmt->bindParam("directores",$s_directores,PDO::PARAM_STR);
+					$stmt->bindParam("promociones",$s_promociones,PDO::PARAM_STR);
+					$stmt->bindParam("archivo",$s_archivo,PDO::PARAM_STR);
+					$stmt->bindParam("ingestaSat",$s_ingestaSat,PDO::PARAM_STR);
+					$stmt->bindParam("can",$s_can,PDO::PARAM_STR);
+					$stmt->bindParam("mesa",$s_mesa,PDO::PARAM_STR);
+					$stmt->bindParam("administracion",$s_administracion,PDO::PARAM_STR);
+					$stmt->bindParam("profile",$profile,PDO::PARAM_STR);
+
+
+					// $hash_password= hash('sha256', $password); //Password encryption
+					// $stmt->bindParam("hash_password", $hash_password,PDO::PARAM_STR) ;
 					
 					$stmt->execute();
 					$uid=$db->lastInsertId(); // Last inserted row id
 					$db = null;
-					$_SESSION['uid']=$uid;
-					$_SESSION['name']=$name;
-					$_SESSION['area']=$area;
+					
+					
 					return true;
 				} else {
 					$db = null;
@@ -78,6 +101,18 @@ class userClass{
 			catch(PDOException $e)
 			{
 				echo '{"error":{"text":'. $e->getMessage() .'}}';
+			}
+		}
+		public function userDataByEmail($email){
+			try {
+				$db = getDB();
+				$stmt = $db->prepare("SELECT * FROM users WHERE email=:email"); 
+				$stmt->bindParam("email", $email,PDO::PARAM_INT);
+				$stmt->execute();
+				$data = $stmt->fetch(PDO::FETCH_OBJ); //User data
+				return $data;
+			} catch (PDOException $e) {
+				echo '{"error":{"text":'. $e->getMessage() .'}}';	
 			}
 		}
 	}

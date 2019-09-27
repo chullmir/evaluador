@@ -2,14 +2,48 @@
 $pageTitle = "Administrar Usuarios";
 require_once 'functions/config.php';
 require_once 'clases/userClass.php';
+require_once 'functions/validacion_superadmin.php';
+$userClass = new userClass();
 
 $db = getDB();
 $stmt = $db->prepare("SELECT * FROM users");
 $stmt->execute();
 $data=$stmt->fetchAll(PDO::FETCH_OBJ);
 
+if (!empty($_POST['userCreateSubmit'])) {
+	$name = $_POST['name'];
+	$lastName = $_POST['lastName'];
+	$email = $_POST['email'];
+	$s_web = (!empty($_POST['web']) ? $_POST['web'] : '');
+	$s_produccionTn = (!empty($_POST['produccionTn']) ? $_POST['produccionTn'] : '');
+	$s_programasTn = (!empty($_POST['programasTn']) ? $_POST['programasTn'] : '');
+	$s_arribaArgentinos = (!empty($_POST['arribaArgentinos']) ? $_POST['arribaArgentinos'] : '');
+	$s_noti13 = (!empty($_POST['noti13']) ? $_POST['noti13'] : '');
+	$s_telenoche = (!empty($_POST['telenoche']) ? $_POST['telenoche'] : '');
+	$s_sintesis = (!empty($_POST['sintesis']) ? $_POST['sintesis'] : '');
+	$s_cronista = (!empty($_POST['cronista']) ? $_POST['cronista'] : '');
+	$s_conduColum = (!empty($_POST['conduColum']) ? $_POST['conduColum'] : '');
+	$s_deportes = (!empty($_POST['deportes']) ? $_POST['deportes'] : '');
+	$s_prodEsp = (!empty($_POST['prodEsp']) ? $_POST['prodEsp'] : '');
+	$s_peJefes = (!empty($_POST['peJefes']) ? $_POST['peJefes'] : '');
+	$s_camaras = (!empty($_POST['camaras']) ? $_POST['camaras'] : '');
+	$s_edicion = (!empty($_POST['edicion']) ? $_POST['edicion'] : '');
+	$s_directores = (!empty($_POST['directores']) ? $_POST['directores'] : '');
+	$s_promociones = (!empty($_POST['promociones']) ? $_POST['promociones'] : '');
+	$s_archivo = (!empty($_POST['archivo']) ? $_POST['archivo'] : '');
+	$s_ingestaSat = (!empty($_POST['ingestaSat']) ? $_POST['ingestaSat'] : '');
+	$s_can = (!empty($_POST['can']) ? $_POST['can'] : '');
+	$s_mesa = (!empty($_POST['mesa']) ? $_POST['mesa'] : '');
+	$s_administracion = (!empty($_POST['administracion']) ? $_POST['administracion'] : '');
+	$profile = $_POST['profile']; 
+	$uid=$userClass->userRegistration($name, $lastName,$email,$s_web,$s_produccionTn,$s_programasTn,$s_arribaArgentinos,$s_noti13,$s_telenoche,$s_sintesis,$s_cronista,$s_conduColum,$s_deportes,$s_prodEsp,$s_peJefes,$s_camaras,$s_edicion,$s_directores,$s_promociones,$s_archivo,$s_ingestaSat,$s_can,$s_mesa,$s_administracion,$profile);
+	header("Location:ajustes.php");
+}
+
+
 // echo "<pre>";
-// var_dump($data);
+// var_dump($_POST);
+// // var_dump($data);
 // echo "</pre>";
  ?>
 
@@ -28,7 +62,7 @@ $data=$stmt->fetchAll(PDO::FETCH_OBJ);
 				<tr>
 					<th scope="col">Nombre</th>
 					<th scope="col">Apellido</th>
-					<th scope="col">Area</th>
+					<th scope="col">Perfil</th>
 					<th scope="col">Editar</th>
 				</tr>
 			</thead>
@@ -38,13 +72,17 @@ $data=$stmt->fetchAll(PDO::FETCH_OBJ);
 					<tr>
 						<td><?= $data[$key]->name ?></td>
 						<td><?= $data[$key]->lastname ?></td>
-						<td><?= $data[$key]->area ?></td>
-						<td>Editar | Borrar</td>
+						<td><?= $data[$key]->profile ?></td>
+						<td><a href="#" class="btn btn-info">Editar</a> <a href="#" class="btn btn-danger">Borrar</a></td>
 					</tr>
 				<?php endforeach ?>
 			
 			</tbody>
 		</table>
+		<div class="comandos">
+			<a href="crear-usuario.php" class="btn btn-success">Nuevo Usuario</a>
+		</div>
+
 	</div>
 </body>
 </html>

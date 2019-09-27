@@ -1,6 +1,9 @@
 *{
 	box-sizing: border-box;
 }
+body{
+	background: #ecfcff;
+}
 .login{
 	margin-top: 25px;
 }
@@ -35,4 +38,5 @@ body nav a:hover{
 
 .container{
 	margin-top: 30px;
+	margin-bottom: 30px;
 }

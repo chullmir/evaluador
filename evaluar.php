@@ -41,15 +41,15 @@ if ($_POST) {
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
 		<h2>Evaluador: <?= $_SESSION['name'] ?></h2>
-		<h2>Sector: <?= $_SESSION['area'] ?></h2>
-
+		
+<!-- 
 		<?php if ($_SESSION['area'] == "web"): ?>
 			<?php require_once 'encuestas/encuesta_web.php'; ?>
 		<?php endif ?>
 		<?php if ($_SESSION['area'] == "camaras"): ?>
 			<?php require_once 'encuestas/encuesta_camaras.php'; ?>
 		<?php endif ?>
-
+ -->
 
 	</div>
 
