@@ -115,4 +115,16 @@ class userClass{
 				echo '{"error":{"text":'. $e->getMessage() .'}}';	
 			}
 		}
+		public function userDataByUid($uid){
+			try {
+				$db = getDB();
+				$stmt = $db->prepare("SELECT * FROM users WHERE uid=:uid"); 
+				$stmt->bindParam("uid", $uid,PDO::PARAM_INT);
+				$stmt->execute();
+				$data = $stmt->fetch(PDO::FETCH_OBJ); //User data
+				return $data;
+			} catch (PDOException $e) {
+				echo '{"error":{"text":'. $e->getMessage() .'}}';	
+			}
+		}
 	}

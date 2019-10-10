@@ -55,7 +55,7 @@ $data=$stmt->fetchAll(PDO::FETCH_OBJ);
 	<div class="container">
 		<!-- <h2>Evaluador: <?= $_SESSION['name'] ?></h2> -->
 		
-		<h2>Personas a #Wcakuae</h2>
+		<h2>Personas</h2>
 		
 		<?php require_once 'componentes/checkSector.php'; ?>
 		

@@ -1,6 +1,6 @@
 <form method="post">
 		
-	<div class="form-group">
+	<!-- <div class="form-group">
 		<label for="redactor">Elija un Redactor:</label>
 		<select class="form-control" name="redactor" id="redactor">
 			<option>Redactor 1</option>
@@ -9,10 +9,11 @@
 			<option>Redactor 4</option>
 			<option>Redactor 5</option>
 		</select>
-	</div>
+	</div> -->
+	<input type="hidden" name="uid" value="<?= $uid ?>">
 	<div class="form-group">
 		<label for="mes">Mes</label>
-		<input type="number" class="form-control" name="mes" id="mes" value="8">
+		<input type="number" class="form-control" name="mes" id="mes" value="<?= date("m") ?>" disabled>
 	</div>
 	<h2>Actitud</h2>
 	<p class="pregunta">¿Reacciona rápido ante los pedidos de un editor?</p>

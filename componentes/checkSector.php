@@ -5,7 +5,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->web)) { ?>
-			 		<li><a href="#"><?php $data[$key]->name." ".$data[$key]->apellido ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?php $data[$key]->name." ".$data[$key]->apellido ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -18,7 +18,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->produccionTn)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -31,7 +31,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->programasTn)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -44,7 +44,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->arribaArgentinos)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -57,7 +57,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->noti13)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -70,7 +70,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->telenoche)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -83,7 +83,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->sintesis)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -96,7 +96,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->cronista)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -109,7 +109,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->conduColum)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -122,7 +122,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->deportes)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -135,7 +135,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->prodEsp)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -148,7 +148,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->peJefes)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -161,7 +161,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->camaras)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -174,7 +174,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->edicion)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -187,7 +187,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->directores)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -200,7 +200,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->promociones)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -213,7 +213,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->archivo)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -226,7 +226,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->ingestaSat)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -239,7 +239,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->can)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -252,7 +252,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->mesa)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
@@ -265,7 +265,7 @@
 			<?php
 			foreach ($data as $key => $value) {
 			 	if (!empty($data[$key]->administracion)) { ?>
-			 		<li><a href="#"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
+			 		<li><a href="encuesta.php?uid=<?= $data[$key]->uid ?>"><?= $data[$key]->name." ".$data[$key]->lastname ?></a></li>
 			<?php } } ?>
 		</ul>					
 		<?php endif ?>
