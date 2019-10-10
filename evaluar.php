@@ -28,9 +28,22 @@ if ($_POST) {
 		# code...
 	}
 }
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
+
+$db = getDB();
+$stmt = $db->prepare("
+	SELECT *
+	FROM users
+	WHERE profile = 'redactor';
+	");
+$stmt->execute();
+$data=$stmt->fetchAll(PDO::FETCH_OBJ);
+
+
+
+// echo "<pre>";
+// // var_dump($data);
+// var_dump($_SESSION);
+// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,11 +53,11 @@ echo "</pre>";
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
-		<h2>Evaluador: <?= $_SESSION['name'] ?></h2>
-
-		<ul>
-			<li></li>
-		</ul>
+		<!-- <h2>Evaluador: <?= $_SESSION['name'] ?></h2> -->
+		
+		<h2>Personas a #Wcakuae</h2>
+		
+		<?php require_once 'componentes/checkSector.php'; ?>
 		
 <!-- 
 		<?php if ($_SESSION['area'] == "web"): ?>

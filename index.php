@@ -60,7 +60,7 @@ if (!empty($_POST['loginSubmit'])) {
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
-		<h1>Bienvenido <?php echo (!empty($_SESSION['name']) ? $_SESSION['name'] : "invitado")  ?></h1>
+		<h1>Hola <?php echo (!empty($_SESSION['name']) ? $_SESSION['name'] : "invitado")  ?></h1>
 		<?php if (!empty($_SESSION['area'])): ?>
 			<p>Sector: <?php echo $_SESSION['area'] ?></p>
 				<img src="img/profile.png" width="100px" alt="">
