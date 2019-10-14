@@ -8,36 +8,12 @@ require_once 'clases/userClass.php';
 $userClass = new userClass();
 $errorMsgReg='';
 $errorMsgLogin='';
-// $_SESSION['name'] = ($_SESSION['name'] ? $_SESSION['name'] : "");
-/* Signup Form */
-if (!empty($_POST['signupSubmit'])) 
-{
-	$name=$_POST['nameReg'];
-	$lastname=$_POST['lastnameReg'];
-	$email=$_POST['emailReg'];
-	$area=$_POST['areaReg'];
-	$password=$_POST['passwordReg'];
-	/* Regular expression check */
-	// $email_check = preg_match('~^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.([a-zA-Z]{2,4})$~i', $email);
-	// $password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
-
-	$uid=$userClass->userRegistration($name,$lastname,$email,$area,$password);
-	// if($uid)
-	// {
-	// 	$url=BASE_URL.'home.php';
-	// 	header("Location: $url"); // Page redirecting to home.php 
-	// } else {
-	// 	$errorMsgReg="Username or Email already exists.";
-	// }
-
-}
 
 /* Login Form */
-if (!empty($_POST['loginSubmit'])) {
-	$userEmail=$_POST['userEmail'];
-	$password=$_POST['password'];
-	// if(strlen(trim($usernameEmail))>1 && strlen(trim($password))>1 ) {
-	$uid=$userClass->userLogin($userEmail,$password);
+// if (!empty($_POST['loginSubmit'])) {
+	// $userEmail=$_POST['userEmail'];
+	// $password=$_POST['password'];
+	// $uid=$userClass->userLogin($userEmail,$password);
 	
 		// if($uid) {
 		// 	$url=BASE_URL.'home.php';
@@ -46,10 +22,12 @@ if (!empty($_POST['loginSubmit'])) {
 		// 	$errorMsgLogin="Please check login details.";
 		// }
 	
-}
+// }
+ 
 // echo "<pre>";
+// var_dump($sector);
 // var_dump($_SESSION);
-// echo "</pre>";
+echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -61,12 +39,16 @@ if (!empty($_POST['loginSubmit'])) {
 	<?php require_once 'componentes/navbar.php'; ?>
 	<div class="container">
 		<h1>Hola <?php echo (!empty($_SESSION['name']) ? $_SESSION['name'] : "invitado")  ?></h1>
-		<?php if (!empty($_SESSION['area'])): ?>
-			<p>Sector: <?php echo $_SESSION['area'] ?></p>
-				<img src="img/profile.png" width="100px" alt="">
-			</div>
+		<?php if (!empty($_SESSION['name'])): ?>
+			<h2>Área(s)</h2>
+			<ul>
+			<?php foreach ($_SESSION['sector'] as $value): ?>
+				<li><?= $value ?></li>
+			<?php endforeach ?>
+			</ul>
 			
 		<?php endif ?>
+		
 
 		
 		

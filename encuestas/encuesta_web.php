@@ -1,15 +1,5 @@
-<form method="post">
+<form method="post" action="">
 		
-	<!-- <div class="form-group">
-		<label for="redactor">Elija un Redactor:</label>
-		<select class="form-control" name="redactor" id="redactor">
-			<option>Redactor 1</option>
-			<option>Redactor 2</option>
-			<option>Redactor 3</option>
-			<option>Redactor 4</option>
-			<option>Redactor 5</option>
-		</select>
-	</div> -->
 	<input type="hidden" name="uid" value="<?= $uid ?>">
 	<div class="form-group">
 		<label for="mes">Mes</label>

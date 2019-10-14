@@ -11,7 +11,7 @@
 					</li>
 	
 					<?php 
-					if (!empty($_SESSION['profile'])) {
+					if (!empty($_SESSION['name'])) {
 						if ($_SESSION['profile'] != "redactor") { ?>
 							<li class="nav-item">
 								<a class="nav-link" href="/evaluador/evaluar.php">Evaluar</a>
