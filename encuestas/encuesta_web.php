@@ -1,10 +1,9 @@
 <form method="post" action="">
 		
 	<input type="hidden" name="uid" value="<?= $uid ?>">
-	<div class="form-group">
-		<label for="mes">Mes</label>
-		<input type="number" class="form-control" name="mes" id="mes" value="<?= date("m") ?>" disabled>
-	</div>
+	<h2>Mes</h2>
+	<p><?= date("m") ?></p>
+	<input type="hidden" class="form-control" name="month" id="month" value="<?= date("m") ?>">
 	<h2>Actitud</h2>
 	<p class="pregunta">¿Reacciona rápido ante los pedidos de un editor?</p>
 	<div class="form-check form-check-inline">
