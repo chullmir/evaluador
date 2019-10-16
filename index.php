@@ -27,7 +27,7 @@ $errorMsgLogin='';
 // echo "<pre>";
 // var_dump($sector);
 // var_dump($_SESSION);
-echo "</pre>";
+// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ echo "</pre>";
 		<?php if (!empty($_SESSION['name'])): ?>
 			<h2>Área(s)</h2>
 			<ul>
-			<?php foreach ($_SESSION['sector'] as $value): ?>
+			<?php foreach ($_SESSION['sectorJefe'] as $value): ?>
 				<li><?= $value ?></li>
 			<?php endforeach ?>
 			</ul>
