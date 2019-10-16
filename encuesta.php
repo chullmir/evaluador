@@ -4,8 +4,8 @@ require_once 'functions/config.php';
 require_once 'clases/userClass.php';
 require_once 'clases/evaluadosClass.php';
 $uid = $_GET["uid"];
-$evaluadosClass = new evaluadosClass();
-$userData = $evaluadosClass->evaluadoByUid($uid);
+$evaluadosClass = new userClass();
+$userData = $evaluadosClass->userDataByUid($uid);
 if (!empty($_POST)) {
 	echo "<pre>";
 	var_dump($_POST);
@@ -24,7 +24,7 @@ if (!empty($_POST)) {
 		<h2><?= $userData->name." ".$userData->lastname ?></h2>
 		
 		<?php
-		$sector = $userData->sector;
+		$sector = $userData->sectorEvaluado;
 		switch ($sector) {
 			case 'Redactor Web':
 				require_once 'encuestas/encuesta_web.php';
