@@ -5,6 +5,18 @@ require_once 'clases/userClass.php';
 if (empty($_SESSION)) {
 	header("Location: index.php");
 }
+$formClass = new formClass();
+if (!empty($_POST)) {
+	if (!empty($_POST['encuestaWebSubmit'])) {
+		$formClass->storeEncuestaWeb($_POST);
+	} else if (!empty($_POST['encuestaPlantilla1Submit'])) {
+		//algo
+	}
+	
+}
+	// echo "<pre>";
+	// var_dump($_SESSION);
+	// echo "</pre>";
 $sectores = $_SESSION['sectorJefe'];
 $pageTitle = "Evaluar";
 $evaluadosClass = new userClass();
@@ -27,7 +39,10 @@ $evaluadosClass = new userClass();
 				$personas = $evaluadosClass->evaluadosPorSector($sector);
 				echo "<ul>";
 				foreach ($personas as $persona) {
-					echo '<li><a href="encuesta.php?uid='.$persona->uid.'">'.$persona->name.' '.$persona->lastname.'</a></li>';
+					$existe = $formClass->yaEvaluadoWeb($persona->uid,$_SESSION['uid']);
+					if (!$existe) {
+						echo '<li><a href="encuesta.php?uid='.$persona->uid.'">'.$persona->name.' '.$persona->lastname.'</a></li>';
+					} 
 				}
 				echo "</ul>";
 			}

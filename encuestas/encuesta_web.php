@@ -1,9 +1,11 @@
-<form method="post" action="">
+<form method="post" action="evaluar.php">
 		
 	<input type="hidden" name="uid" value="<?= $uid ?>">
+	<input type="hidden" name="evalua" value="<?= $_SESSION['uid'] ?>">
 	<h2>Mes</h2>
 	<p><?= date("m") ?></p>
-	<input type="hidden" class="form-control" name="month" id="month" value="<?= date("m") ?>">
+	<input type="hidden" name="year" id="year" value="<?= date("y") ?>">
+	<input type="hidden" name="month" id="month" value="<?= date("m") ?>">
 	<h2>Actitud</h2>
 	<p class="pregunta">¿Reacciona rápido ante los pedidos de un editor?</p>
 	<div class="form-check form-check-inline">
