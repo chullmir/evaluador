@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2019 a las 22:23:58
+-- Tiempo de generación: 21-10-2019 a las 23:08:09
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -21,6 +21,132 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tn`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_plantilla1`
+--
+
+CREATE TABLE `evaluacion_plantilla1` (
+  `id` int(11) NOT NULL,
+  `uidUser` int(11) NOT NULL,
+  `uidEvalua` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `actitud1` int(11) NOT NULL,
+  `actitud2` int(11) NOT NULL,
+  `actitud3` int(11) NOT NULL,
+  `actitud4` int(11) NOT NULL,
+  `actitud5` int(11) NOT NULL,
+  `actitud6` int(11) NOT NULL,
+  `desempeno1` int(11) NOT NULL,
+  `desempeno2` int(11) NOT NULL,
+  `desempeno3` int(11) NOT NULL,
+  `desempeno4` int(11) NOT NULL,
+  `desempeno5` int(11) NOT NULL,
+  `desempeno6` int(11) NOT NULL,
+  `desempeno7` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_plantilla2`
+--
+
+CREATE TABLE `evaluacion_plantilla2` (
+  `id` int(11) NOT NULL,
+  `uidUser` int(11) NOT NULL,
+  `uidEvalua` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `actitud1` int(11) NOT NULL,
+  `actitud2` int(11) NOT NULL,
+  `actitud3` int(11) NOT NULL,
+  `actitud4` int(11) NOT NULL,
+  `actitud5` int(11) NOT NULL,
+  `actitud6` int(11) NOT NULL,
+  `desempeno1` int(11) NOT NULL,
+  `desempeno2` int(11) NOT NULL,
+  `desempeno3` int(11) NOT NULL,
+  `desempeno4` int(11) NOT NULL,
+  `desempeno5` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_plantilla3`
+--
+
+CREATE TABLE `evaluacion_plantilla3` (
+  `id` int(11) NOT NULL,
+  `uidUser` int(11) NOT NULL,
+  `uidEvalua` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `actitud1` int(11) NOT NULL,
+  `actitud2` int(11) NOT NULL,
+  `actitud3` int(11) NOT NULL,
+  `actitud4` int(11) NOT NULL,
+  `actitud5` int(11) NOT NULL,
+  `actitud6` int(11) NOT NULL,
+  `desempeno1` int(11) NOT NULL,
+  `desempeno2` int(11) NOT NULL,
+  `desempeno3` int(11) NOT NULL,
+  `desempeno4` int(11) NOT NULL,
+  `desempeno5` int(11) NOT NULL,
+  `desempeno6` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_plantilla4`
+--
+
+CREATE TABLE `evaluacion_plantilla4` (
+  `id` int(11) NOT NULL,
+  `uidUser` int(11) NOT NULL,
+  `uidEvalua` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `actitud1` int(11) NOT NULL,
+  `actitud2` int(11) NOT NULL,
+  `actitud3` int(11) NOT NULL,
+  `actitud4` int(11) NOT NULL,
+  `actitud5` int(11) NOT NULL,
+  `actitud6` int(11) NOT NULL,
+  `desempeno1` int(11) NOT NULL,
+  `desempeno2` int(11) NOT NULL,
+  `desempeno3` int(11) NOT NULL,
+  `desempeno4` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evaluacion_plantilla5`
+--
+
+CREATE TABLE `evaluacion_plantilla5` (
+  `id` int(11) NOT NULL,
+  `uidUser` int(11) NOT NULL,
+  `uidEvalua` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `month` int(11) NOT NULL,
+  `desempeno1` int(11) NOT NULL,
+  `desempeno2` int(11) NOT NULL,
+  `desempeno3` int(11) NOT NULL,
+  `desempeno4` int(11) NOT NULL,
+  `desempeno5` int(11) NOT NULL,
+  `desempeno6` int(11) NOT NULL,
+  `desempeno7` int(11) NOT NULL,
+  `desempeno8` int(11) NOT NULL,
+  `desempeno9` int(11) NOT NULL,
+  `desempeno10` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -44,6 +170,152 @@ CREATE TABLE `evaluacion_redactores` (
   `rigurosidad1` int(11) NOT NULL,
   `rigurosidad2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `evaluacion_redactores`
+--
+
+INSERT INTO `evaluacion_redactores` (`id`, `uidUser`, `uidEvalua`, `year`, `month`, `actitud1`, `actitud2`, `actitud3`, `redaccion1`, `redaccion2`, `redaccion3`, `redaccion4`, `rigurosidad1`, `rigurosidad2`) VALUES
+(1, 297, 34, 2019, 6, 5, 5, 5, 4, 5, 3, 4, 5, 4),
+(2, 298, 34, 2019, 6, 4, 3, 3, 4, 4, 4, 4, 5, 4),
+(3, 300, 34, 2019, 6, 4, 5, 4, 3, 4, 4, 4, 5, 4),
+(4, 301, 34, 2019, 6, 4, 4, 3, 3, 4, 4, 4, 4, 3),
+(5, 302, 34, 2019, 6, 5, 5, 4, 4, 4, 4, 4, 4, 3),
+(6, 303, 34, 2019, 6, 4, 4, 3, 4, 4, 4, 4, 4, 4),
+(7, 304, 34, 2019, 6, 4, 5, 3, 3, 3, 4, 3, 5, 3),
+(8, 297, 38, 2019, 6, 5, 5, 5, 5, 5, 4, 4, 5, 5),
+(9, 298, 38, 2019, 6, 3, 2, 2, 4, 3, 5, 4, 4, 5),
+(10, 299, 38, 2019, 6, 4, 4, 4, 2, 3, 2, 2, 3, 3),
+(11, 300, 38, 2019, 6, 5, 5, 5, 2, 3, 2, 2, 3, 3),
+(12, 301, 38, 2019, 6, 4, 4, 4, 4, 3, 5, 5, 5, 3),
+(13, 302, 38, 2019, 6, 4, 4, 5, 5, 5, 3, 3, 5, 5),
+(14, 303, 38, 2019, 6, 5, 5, 5, 5, 4, 5, 4, 5, 5),
+(15, 304, 38, 2019, 6, 4, 4, 4, 2, 2, 2, 2, 4, 3),
+(16, 305, 38, 2019, 6, 3, 4, 4, 3, 3, 3, 3, 3, 4),
+(17, 306, 38, 2019, 6, 5, 5, 5, 2, 3, 2, 2, 4, 3),
+(18, 307, 38, 2019, 6, 5, 5, 5, 4, 3, 3, 3, 4, 4),
+(19, 308, 38, 2019, 6, 4, 3, 4, 4, 4, 5, 5, 4, 4),
+(20, 309, 38, 2019, 6, 3, 2, 3, 3, 3, 2, 3, 3, 3),
+(21, 310, 38, 2019, 6, 3, 2, 2, 3, 3, 2, 2, 3, 3),
+(22, 311, 38, 2019, 6, 3, 3, 2, 3, 3, 4, 4, 3, 3),
+(23, 312, 38, 2019, 6, 3, 3, 3, 3, 2, 3, 3, 3, 3),
+(24, 313, 38, 2019, 6, 5, 5, 5, 4, 4, 4, 4, 5, 5),
+(25, 314, 38, 2019, 6, 4, 3, 4, 3, 2, 2, 2, 5, 5),
+(26, 315, 38, 2019, 6, 4, 4, 4, 3, 4, 4, 3, 5, 4),
+(27, 40, 38, 2019, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5),
+(28, 316, 38, 2019, 6, 4, 4, 4, 5, 4, 5, 5, 5, 5),
+(29, 317, 38, 2019, 6, 5, 5, 5, 5, 5, 5, 4, 5, 5),
+(30, 320, 38, 2019, 6, 5, 5, 5, 5, 4, 3, 5, 5, 5),
+(31, 318, 38, 2019, 6, 4, 4, 4, 2, 3, 2, 3, 3, 4),
+(32, 321, 38, 2019, 6, 5, 5, 5, 3, 3, 3, 3, 5, 3),
+(33, 322, 38, 2019, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5),
+(34, 297, 37, 2019, 6, 5, 2, 5, 4, 5, 2, 2, 5, 5),
+(35, 298, 37, 2019, 6, 3, 2, 4, 3, 5, 4, 3, 4, 5),
+(36, 300, 37, 2019, 6, 4, 5, 5, 3, 5, 2, 3, 3, 5),
+(37, 301, 37, 2019, 6, 3, 3, 4, 5, 2, 3, 4, 3, 4),
+(38, 302, 37, 2019, 6, 3, 5, 5, 3, 4, 4, 4, 5, 5),
+(39, 303, 37, 2019, 6, 3, 4, 4, 3, 4, 2, 2, 5, 5),
+(40, 304, 37, 2019, 6, 3, 5, 3, 3, 2, 2, 2, 4, 5),
+(41, 305, 37, 2019, 6, 3, 4, 4, 3, 5, 3, 4, 3, 5),
+(42, 306, 37, 2019, 6, 2, 3, 4, 4, 3, 2, 2, 3, 4),
+(43, 307, 37, 2019, 6, 3, 4, 5, 4, 3, 2, 3, 3, 4),
+(44, 309, 37, 2019, 6, 4, 3, 4, 3, 4, 2, 3, 3, 3),
+(45, 310, 37, 2019, 6, 3, 3, 4, 3, 4, 2, 3, 5, 4),
+(46, 311, 37, 2019, 6, 3, 2, 4, 4, 3, 4, 4, 3, 3),
+(47, 312, 37, 2019, 6, 3, 2, 4, 3, 3, 2, 3, 4, 4),
+(48, 313, 37, 2019, 6, 4, 3, 4, 3, 3, 2, 4, 5, 5),
+(49, 314, 37, 2019, 6, 3, 3, 4, 2, 3, 2, 3, 5, 5),
+(50, 315, 37, 2019, 6, 5, 4, 4, 3, 4, 2, 3, 5, 4),
+(51, 40, 37, 2019, 6, 5, 5, 5, 4, 5, 4, 4, 4, 5),
+(52, 316, 37, 2019, 6, 5, 5, 4, 4, 4, 4, 4, 5, 5),
+(53, 317, 37, 2019, 6, 5, 5, 4, 3, 5, 4, 4, 4, 4),
+(54, 318, 37, 2019, 6, 4, 4, 4, 3, 4, 2, 3, 4, 4),
+(55, 321, 37, 2019, 6, 3, 3, 4, 3, 4, 3, 4, 4, 4),
+(56, 318, 35, 2019, 6, 5, 5, 4, 2, 3, 3, 3, 1, 3),
+(57, 317, 35, 2019, 6, 5, 5, 5, 3, 4, 4, 4, 2, 3),
+(58, 316, 35, 2019, 6, 5, 5, 5, 4, 5, 4, 4, 5, 5),
+(59, 40, 35, 2019, 6, 4, 5, 5, 4, 5, 5, 5, 4, 4),
+(60, 315, 35, 2019, 6, 4, 4, 3, 3, 5, 4, 4, 3, 3),
+(61, 309, 35, 2019, 6, 4, 4, 4, 3, 4, 3, 3, 3, 3),
+(62, 308, 35, 2019, 6, 4, 4, 4, 4, 3, 4, 4, 2, 2),
+(63, 303, 35, 2019, 6, 5, 5, 4, 4, 5, 4, 5, 5, 5),
+(64, 300, 35, 2019, 6, 5, 5, 5, 2, 4, 3, 3, 3, 3),
+(65, 302, 35, 2019, 6, 4, 5, 5, 4, 5, 4, 4, 5, 4),
+(66, 305, 34, 2019, 6, 4, 4, 3, 4, 3, 2, 2, 5, 3),
+(67, 298, 35, 2019, 6, 3, 3, 4, 3, 3, 4, 3, 2, 3),
+(68, 306, 34, 2019, 6, 2, 4, 4, 3, 3, 3, 3, 4, 3),
+(69, 307, 34, 2019, 6, 4, 5, 4, 2, 3, 2, 2, 5, 3),
+(70, 309, 34, 2019, 6, 3, 3, 3, 3, 4, 3, 3, 4, 3),
+(71, 310, 34, 2019, 6, 4, 4, 4, 3, 3, 3, 3, 4, 3),
+(72, 311, 34, 2019, 6, 4, 4, 3, 4, 4, 4, 4, 4, 3),
+(73, 312, 34, 2019, 6, 3, 4, 3, 3, 3, 3, 3, 4, 3),
+(74, 313, 34, 2019, 6, 3, 4, 4, 3, 4, 3, 3, 5, 4),
+(75, 314, 34, 2019, 6, 3, 3, 3, 3, 3, 3, 3, 5, 3),
+(76, 315, 34, 2019, 6, 3, 4, 3, 3, 3, 3, 3, 4, 3),
+(77, 40, 34, 2019, 6, 3, 4, 3, 4, 4, 3, 3, 4, 3),
+(78, 316, 34, 2019, 6, 4, 5, 4, 4, 4, 4, 4, 5, 4),
+(79, 317, 34, 2019, 6, 4, 5, 4, 4, 4, 4, 4, 4, 3),
+(80, 162, 34, 2019, 6, 3, 2, 2, 4, 3, 3, 4, 5, 4),
+(81, 320, 34, 2019, 6, 4, 2, 3, 4, 2, 2, 2, 5, 4),
+(82, 318, 34, 2019, 6, 3, 4, 4, 3, 4, 4, 3, 4, 3),
+(83, 321, 34, 2019, 6, 4, 5, 4, 3, 4, 3, 3, 4, 3),
+(84, 322, 34, 2019, 6, 4, 4, 3, 4, 4, 4, 4, 4, 4),
+(85, 306, 41, 2019, 6, 3, 3, 4, 1, 3, 1, 2, 4, 4),
+(86, 307, 41, 2019, 6, 4, 4, 4, 2, 3, 2, 2, 3, 3),
+(87, 310, 319, 2019, 6, 4, 5, 5, 3, 3, 3, 3, 4, 4),
+(88, 322, 41, 2019, 6, 5, 4, 3, 5, 4, 5, 5, 5, 5),
+(89, 305, 41, 2019, 6, 3, 3, 3, 3, 2, 3, 3, 4, 4),
+(90, 297, 39, 2019, 6, 4, 3, 5, 5, 5, 5, 4, 4, 5),
+(91, 299, 39, 2019, 6, 3, 5, 5, 3, 3, 1, 2, 2, 4),
+(92, 302, 39, 2019, 6, 2, 4, 4, 5, 4, 5, 5, 5, 5),
+(93, 303, 39, 2019, 6, 5, 3, 5, 5, 5, 5, 5, 5, 5),
+(94, 305, 39, 2019, 6, 5, 5, 4, 4, 2, 3, 3, 4, 4),
+(95, 306, 39, 2019, 6, 3, 2, 3, 3, 3, 2, 3, 3, 5),
+(96, 308, 39, 2019, 6, 4, 4, 5, 3, 3, 4, 4, 4, 4),
+(97, 309, 39, 2019, 6, 2, 2, 2, 2, 4, 2, 3, 2, 2),
+(98, 310, 39, 2019, 6, 3, 3, 4, 3, 2, 1, 3, 4, 4),
+(99, 312, 39, 2019, 6, 2, 2, 2, 3, 3, 3, 3, 3, 2),
+(100, 314, 39, 2019, 6, 2, 3, 4, 2, 3, 2, 2, 4, 4),
+(101, 315, 39, 2019, 6, 4, 5, 4, 4, 5, 5, 5, 4, 4),
+(102, 40, 39, 2019, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5),
+(103, 316, 39, 2019, 6, 4, 4, 4, 5, 4, 5, 5, 5, 5),
+(104, 317, 39, 2019, 6, 5, 5, 5, 4, 5, 5, 5, 3, 4),
+(105, 162, 39, 2019, 6, 2, 3, 2, 4, 4, 3, 4, 4, 4),
+(106, 320, 39, 2019, 6, 3, 3, 3, 4, 4, 4, 4, 4, 5),
+(107, 321, 39, 2019, 6, 3, 3, 3, 3, 3, 2, 2, 3, 3),
+(108, 322, 39, 2019, 6, 4, 4, 4, 5, 5, 5, 5, 5, 5),
+(109, 297, 36, 2019, 6, 4, 4, 3, 3, 4, 4, 3, 5, 5),
+(110, 298, 36, 2019, 6, 3, 2, 4, 4, 4, 3, 3, 3, 3),
+(111, 311, 319, 2019, 6, 3, 4, 4, 4, 3, 4, 4, 4, 3),
+(112, 312, 319, 2019, 6, 3, 4, 4, 3, 3, 4, 4, 4, 3),
+(113, 313, 319, 2019, 6, 4, 4, 4, 3, 4, 3, 3, 4, 3),
+(114, 299, 36, 2019, 6, 5, 5, 5, 3, 2, 3, 3, 2, 4),
+(115, 300, 36, 2019, 6, 5, 5, 5, 2, 2, 3, 3, 3, 3),
+(116, 301, 36, 2019, 6, 4, 4, 4, 4, 2, 4, 5, 4, 4),
+(117, 302, 36, 2019, 6, 2, 2, 3, 3, 2, 5, 5, 5, 5),
+(118, 303, 36, 2019, 6, 4, 4, 5, 4, 4, 4, 4, 5, 5),
+(119, 304, 36, 2019, 6, 3, 5, 5, 2, 1, 2, 2, 5, 3),
+(120, 305, 36, 2019, 6, 3, 4, 4, 3, 2, 3, 4, 4, 4),
+(121, 306, 36, 2019, 6, 5, 4, 4, 3, 2, 2, 2, 4, 4),
+(122, 307, 36, 2019, 6, 5, 5, 5, 2, 3, 2, 2, 3, 3),
+(123, 308, 36, 2019, 6, 3, 3, 4, 3, 3, 5, 5, 3, 3),
+(124, 309, 36, 2019, 6, 4, 3, 4, 3, 4, 3, 3, 3, 3),
+(125, 310, 36, 2019, 6, 3, 3, 3, 3, 3, 4, 4, 5, 4),
+(126, 311, 36, 2019, 6, 3, 3, 3, 5, 3, 5, 5, 3, 4),
+(127, 312, 36, 2019, 6, 4, 4, 4, 2, 3, 4, 4, 3, 4),
+(128, 313, 36, 2019, 6, 3, 4, 5, 3, 5, 3, 3, 5, 5),
+(129, 314, 36, 2019, 6, 3, 3, 4, 2, 3, 3, 4, 5, 5),
+(130, 315, 36, 2019, 6, 4, 2, 3, 3, 5, 4, 4, 4, 4),
+(131, 304, 41, 2019, 6, 5, 5, 5, 3, 2, 2, 2, 4, 5),
+(132, 40, 36, 2019, 6, 4, 4, 4, 4, 4, 4, 5, 5, 4),
+(133, 316, 36, 2019, 6, 5, 5, 5, 5, 4, 5, 5, 5, 5),
+(134, 317, 36, 2019, 6, 5, 5, 5, 3, 5, 4, 4, 4, 4),
+(135, 162, 36, 2019, 6, 2, 2, 3, 4, 4, 5, 5, 5, 5),
+(136, 320, 36, 2019, 6, 2, 3, 3, 5, 5, 1, 5, 5, 5),
+(137, 318, 36, 2019, 6, 5, 5, 5, 3, 4, 2, 3, 3, 4),
+(138, 321, 36, 2019, 6, 3, 2, 4, 2, 4, 2, 3, 4, 4),
+(139, 322, 36, 2019, 6, 5, 5, 5, 5, 4, 4, 4, 5, 5),
+(140, 299, 34, 2019, 6, 3, 4, 4, 3, 4, 3, 3, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -394,11 +666,45 @@ INSERT INTO `users` (`uid`, `name`, `lastname`, `email`, `sectorJefe`, `sectorEv
 (315, 'Nicolás', 'Rocca', '', '', 'Redactor Web', ''),
 (316, 'Bruno', 'Yacono', '', '', 'Redactor Web', ''),
 (317, 'Andrés', 'Piccione', '', '', 'Redactor Web', ''),
-(318, 'Oswaldo', 'Ramirez', '', '', 'Redactor Web', '');
+(318, 'Oswaldo', 'Ramirez', '', '', 'Redactor Web', ''),
+(319, 'Verónica', 'Pages', '', 'Redactor Web', '', ''),
+(320, 'Miriam', 'Lewin', '', '', 'Redactor Web', ''),
+(321, 'Agustín', 'Tonet', '', '', 'Redactor Web', ''),
+(322, 'Jonathan', 'Wiktor', '', '', 'Redactor Web', '');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `evaluacion_plantilla1`
+--
+ALTER TABLE `evaluacion_plantilla1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `evaluacion_plantilla2`
+--
+ALTER TABLE `evaluacion_plantilla2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `evaluacion_plantilla3`
+--
+ALTER TABLE `evaluacion_plantilla3`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `evaluacion_plantilla4`
+--
+ALTER TABLE `evaluacion_plantilla4`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `evaluacion_plantilla5`
+--
+ALTER TABLE `evaluacion_plantilla5`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `evaluacion_redactores`
@@ -423,10 +729,40 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `evaluacion_plantilla1`
+--
+ALTER TABLE `evaluacion_plantilla1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `evaluacion_plantilla2`
+--
+ALTER TABLE `evaluacion_plantilla2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `evaluacion_plantilla3`
+--
+ALTER TABLE `evaluacion_plantilla3`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `evaluacion_plantilla4`
+--
+ALTER TABLE `evaluacion_plantilla4`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `evaluacion_plantilla5`
+--
+ALTER TABLE `evaluacion_plantilla5`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `evaluacion_redactores`
 --
 ALTER TABLE `evaluacion_redactores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT de la tabla `sectores`
@@ -438,7 +774,7 @@ ALTER TABLE `sectores`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=319;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=323;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
