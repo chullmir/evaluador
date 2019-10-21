@@ -86,6 +86,17 @@ class formClass{
 	}
 	$conn = null;
 	}
-	// public function 
+	public function resultadosRedactores($uid){
+		// $db = getDB();
+		// $stmt = $db->prepare("SELECT * FROM evaluacion_redactores WHERE (uidUser = :uid AND uidEvalua = :evalua AND year = :year AND month = :month)");
+		// $stmt->bindParam("uid",$uid);
+		// $stmt->bindParam("evalua",$evalua);
+		// $stmt->bindParam("year",$year);
+		// $stmt->bindParam("month",$month);
+		// $stmt->execute();
+		// $count=$stmt->rowCount();
+		// $data=$stmt->fetch(PDO::FETCH_OBJ);
+
+	} 
 }
 
