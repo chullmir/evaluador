@@ -86,5 +86,6 @@ class formClass{
 	}
 	$conn = null;
 	}
+	// public function 
 }
 

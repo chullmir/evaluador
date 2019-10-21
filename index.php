@@ -8,6 +8,10 @@ require_once 'clases/userClass.php';
 $userClass = new userClass();
 $errorMsgReg='';
 $errorMsgLogin='';
+if (!empty($_SESSION['name'])) {
+	$cantSectores = count($_SESSION['sectorJefe']);
+}
+
 
 /* Login Form */
 // if (!empty($_POST['loginSubmit'])) {
@@ -40,7 +44,7 @@ $errorMsgLogin='';
 	<div class="container">
 		<h1>Hola <?php echo (!empty($_SESSION['name']) ? $_SESSION['name'] : "invitado")  ?></h1>
 		<?php if (!empty($_SESSION['name'])): ?>
-			<h2>Área(s)</h2>
+			<h2><?= ($cantSectores > 1 ? "Areas" : "Area") ?></h2>
 			<ul>
 			<?php foreach ($_SESSION['sectorJefe'] as $value): ?>
 				<li><?= $value ?></li>

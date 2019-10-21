@@ -32,7 +32,6 @@ $evaluadosClass = new userClass();
 	<div class="container">
 
 		<h2>Personas</h2>
-		<a href=""></a>
 		<?php
 			foreach ($sectores as $sector) {
 				echo "<h3>".$sector."</h3>";
