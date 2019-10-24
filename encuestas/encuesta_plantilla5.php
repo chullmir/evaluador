@@ -215,7 +215,7 @@
 		<label class="form-check-label" for="desempeno9Radio5">5</label>
 	</div>
 
-	<p class="pregunta">¿Es crativo?</p>
+	<p class="pregunta">¿Es creativo?</p>
 
 	<div class="form-check form-check-inline">
 		<input class="form-check-input" type="radio" name="desempeno10" id="desempeno10Radio1" value="1" required>
