@@ -149,7 +149,7 @@
 		<label class="form-check-label" for="desempeno6Radio5">5</label>
 	</div>
 
-	<p class="pregunta">¿Realiza seguimiento de la cobertura diaria</p>
+	<p class="pregunta">¿Realiza seguimiento de la cobertura diaria?</p>
 
 	<div class="form-check form-check-inline">
 		<input class="form-check-input" type="radio" name="desempeno7" id="desempeno7Radio1" value="1" required>
