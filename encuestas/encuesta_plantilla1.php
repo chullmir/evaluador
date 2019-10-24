@@ -5,6 +5,7 @@
 	<p><?= date("m") ?></p>
 	<input type="hidden" name="year" id="year" value="<?= date("y") ?>">
 	<input type="hidden" name="month" id="month" value="<?= date("m") ?>">
+	<input type="hidden" name="quarter" id="quarter" value="<?= ceil(date("m")/4) ?>">
 
 	<?php require_once 'encuesta_actitud.php'; ?>
 

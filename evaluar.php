@@ -10,7 +10,15 @@ if (!empty($_POST)) {
 	if (!empty($_POST['encuestaWebSubmit'])) {
 		$formClass->storeEncuestaWeb($_POST);
 	} else if (!empty($_POST['encuestaPlantilla1Submit'])) {
+		$formClass->storeEncuestaPlantilla1($_POST);
+	} else if (!empty($_POST['encuestaPlantilla2Submit'])) {
 		//algo
+	} else if (!empty($_POST['encuestaPlantilla3Submit'])) {
+		// algo
+	} else if (!empty($_POST['encuestaPlantilla4Submit'])) {
+		// algo
+	} else if (!empty($_POST['encuestaPlantilla5Submit'])) {
+		// algo
 	}
 	
 }

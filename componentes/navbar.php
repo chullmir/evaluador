@@ -38,7 +38,7 @@
 					<?php } else { ?>
 						<li class="nav-item">
 							<a class="nav-link" href="#">
-								Mi Perfil <i class="fas fa-user"></i> <!-- uses solid style -->
+								<?= $_SESSION['name'] ?> <i class="fas fa-user"></i> <!-- uses solid style -->
 							</a>
 						</li>
 						<li class="nav-item">
