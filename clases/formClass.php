@@ -205,60 +205,324 @@ class formClass{
 		return $datos;
 	}
 
-	// public function promediosPlantilla1()
-	// {
-	// 	$db = getDB();
-	// 	$stmt = $db->prepare("SELECT * FROM evaluacion_redactores WHERE quarter = :quarter");
-	// 	$quarter = ceil(date('m') / 4);
-	// 	$stmt->bindParam("quarter",$quarter);
-	// 	$stmt->execute();
-	// 	$count = $stmt->rowCount();
-	// 	$data = $stmt->fetchAll();
-	// 	if ($count>0) {
-	// 		$contador = 0;
-	// 		$actitud1 = 0;
-	// 		$actitud2 = 0;
-	// 		$actitud3 = 0;
-	// 		$redaccion1 = 0;
-	// 		$redaccion2 = 0;
-	// 		$redaccion3 = 0;
-	// 		$redaccion4 = 0;
-	// 		$rigurosidad1 = 0;
-	// 		$rigurosidad2 = 0;
-	// 		foreach ($data as $datum) {
-	// 			$actitud1 = $actitud1 + $datum['actitud1'];
-	// 			$actitud2 = $actitud2 + $datum['actitud2'];
-	// 			$actitud3 = $actitud3 + $datum['actitud3'];
-	// 			$redaccion1 = $redaccion1 + $datum['redaccion1'];
-	// 			$redaccion2 = $redaccion2 + $datum['redaccion2'];
-	// 			$redaccion3 = $redaccion3 + $datum['redaccion3'];
-	// 			$redaccion4 = $redaccion4 + $datum['redaccion4'];
-	// 			$rigurosidad1 = $rigurosidad1 + $datum['rigurosidad1'];
-	// 			$rigurosidad2 = $rigurosidad2 + $datum['rigurosidad2'];
-	// 			$contador = $contador + 1;
-	// 		}
-	// 		$datos['actitud1'] = $actitud1 / $contador;
-	// 		$datos['actitud2'] = $actitud2 / $contador;
-	// 		$datos['actitud3'] = $actitud3 / $contador;
-	// 		$datos['redaccion1'] = $redaccion1 / $contador;
-	// 		$datos['redaccion2'] = $redaccion2 / $contador;
-	// 		$datos['redaccion3'] = $redaccion3 / $contador;
-	// 		$datos['redaccion4'] = $redaccion4 / $contador;
-	// 		$datos['rigurosidad1'] = $rigurosidad1 / $contador;
-	// 		$datos['rigurosidad2'] = $rigurosidad2 / $contador;
-	// 	} else {
-	// 		$datos['actitud1'] = 0;
-	// 		$datos['actitud2'] = 0;
-	// 		$datos['actitud3'] = 0;
-	// 		$datos['redaccion1'] = 0;
-	// 		$datos['redaccion2'] = 0;
-	// 		$datos['redaccion3'] = 0;
-	// 		$datos['redaccion4'] = 0;
-	// 		$datos['rigurosidad1'] = 0;
-	// 		$datos['rigurosidad2'] = 0;
-	// 	}
-	// 	return $datos;
-	// }
+	public function promediosPlantilla1()
+	{
+		$db = getDB();
+		$stmt = $db->prepare("SELECT * FROM evaluacion_plantilla1 WHERE quarter = :quarter");
+		$quarter = ceil(date('m') / 4);
+		$stmt->bindParam("quarter",$quarter);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		$data = $stmt->fetchAll();
+		if ($count>0) {
+			$contador = 0;
+			$actitud1 = 0;
+			$actitud2 = 0;
+			$actitud3 = 0;
+			$actitud4 = 0;
+			$actitud5 = 0;
+			$actitud6 = 0;
+			$desempeno1 = 0;
+			$desempeno2 = 0;
+			$desempeno3 = 0;
+			$desempeno4 = 0;
+			$desempeno5 = 0;
+			$desempeno6 = 0;
+			$desempeno7 = 0;
+			foreach ($data as $datum) {
+				$actitud1 = $actitud1 + $datum['actitud1'];
+				$actitud2 = $actitud2 + $datum['actitud2'];
+				$actitud3 = $actitud3 + $datum['actitud3'];
+				$actitud4 = $actitud4 + $datum['actitud4'];
+				$actitud5 = $actitud5 + $datum['actitud5'];
+				$actitud6 = $actitud6 + $datum['actitud6'];
+				$desempeno1 = $desempeno1 + $datum['desempeno1'];
+				$desempeno2 = $desempeno2 + $datum['desempeno2'];
+				$desempeno3 = $desempeno3 + $datum['desempeno3'];
+				$desempeno4 = $desempeno4 + $datum['desempeno4'];
+				$desempeno5 = $desempeno5 + $datum['desempeno5'];
+				$desempeno6 = $desempeno6 + $datum['desempeno6'];
+				$desempeno7 = $desempeno7 + $datum['desempeno7'];
+				$contador = $contador + 1;
+			}
+			$datos['actitud1'] = $actitud1 / $contador;
+			$datos['actitud2'] = $actitud2 / $contador;
+			$datos['actitud3'] = $actitud3 / $contador;
+			$datos['actitud4'] = $actitud4 / $contador;
+			$datos['actitud5'] = $actitud5 / $contador;
+			$datos['actitud6'] = $actitud6 / $contador;
+			$datos['desempeno1'] = $desempeno1 / $contador;
+			$datos['desempeno2'] = $desempeno2 / $contador;
+			$datos['desempeno3'] = $desempeno3 / $contador;
+			$datos['desempeno4'] = $desempeno4 / $contador;
+			$datos['desempeno5'] = $desempeno5 / $contador;
+			$datos['desempeno6'] = $desempeno6 / $contador;
+			$datos['desempeno7'] = $desempeno7 / $contador;
+		} else {
+			$datos['actitud1'] = 0;
+			$datos['actitud2'] = 0;
+			$datos['actitud3'] = 0;
+			$datos['actitud4'] = 0;
+			$datos['actitud5'] = 0;
+			$datos['actitud6'] = 0;
+			$datos['desempeno1'] = 0;
+			$datos['desempeno2'] = 0;
+			$datos['desempeno3'] = 0;
+			$datos['desempeno4'] = 0;
+			$datos['desempeno5'] = 0;
+			$datos['desempeno6'] = 0;
+			$datos['desempeno7'] = 0;
+		}
+		return $datos;
+	}
+
+	public function promediosPlantilla2()
+	{
+		$db = getDB();
+		$stmt = $db->prepare("SELECT * FROM evaluacion_plantilla2 WHERE quarter = :quarter");
+		$quarter = ceil(date('m') / 4);
+		$stmt->bindParam("quarter",$quarter);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		$data = $stmt->fetchAll();
+		if ($count>0) {
+			$contador = 0;
+			$actitud1 = 0;
+			$actitud2 = 0;
+			$actitud3 = 0;
+			$actitud4 = 0;
+			$actitud5 = 0;
+			$actitud6 = 0;
+			$desempeno1 = 0;
+			$desempeno2 = 0;
+			$desempeno3 = 0;
+			$desempeno4 = 0;
+			$desempeno5 = 0;
+			foreach ($data as $datum) {
+				$actitud1 = $actitud1 + $datum['actitud1'];
+				$actitud2 = $actitud2 + $datum['actitud2'];
+				$actitud3 = $actitud3 + $datum['actitud3'];
+				$actitud4 = $actitud4 + $datum['actitud4'];
+				$actitud5 = $actitud5 + $datum['actitud5'];
+				$actitud6 = $actitud6 + $datum['actitud6'];
+				$desempeno1 = $desempeno1 + $datum['desempeno1'];
+				$desempeno2 = $desempeno2 + $datum['desempeno2'];
+				$desempeno3 = $desempeno3 + $datum['desempeno3'];
+				$desempeno4 = $desempeno4 + $datum['desempeno4'];
+				$desempeno5 = $desempeno5 + $datum['desempeno5'];
+				$contador = $contador + 1;
+			}
+			$datos['actitud1'] = $actitud1 / $contador;
+			$datos['actitud2'] = $actitud2 / $contador;
+			$datos['actitud3'] = $actitud3 / $contador;
+			$datos['actitud4'] = $actitud4 / $contador;
+			$datos['actitud5'] = $actitud5 / $contador;
+			$datos['actitud6'] = $actitud6 / $contador;
+			$datos['desempeno1'] = $desempeno1 / $contador;
+			$datos['desempeno2'] = $desempeno2 / $contador;
+			$datos['desempeno3'] = $desempeno3 / $contador;
+			$datos['desempeno4'] = $desempeno4 / $contador;
+			$datos['desempeno5'] = $desempeno5 / $contador;
+		} else {
+			$datos['actitud1'] = 0;
+			$datos['actitud2'] = 0;
+			$datos['actitud3'] = 0;
+			$datos['actitud4'] = 0;
+			$datos['actitud5'] = 0;
+			$datos['actitud6'] = 0;
+			$datos['desempeno1'] = 0;
+			$datos['desempeno2'] = 0;
+			$datos['desempeno3'] = 0;
+			$datos['desempeno4'] = 0;
+			$datos['desempeno5'] = 0;
+		}
+		return $datos;
+	}
+
+	public function promediosPlantilla3()
+	{
+		$db = getDB();
+		$stmt = $db->prepare("SELECT * FROM evaluacion_plantilla3 WHERE quarter = :quarter");
+		$quarter = ceil(date('m') / 4);
+		$stmt->bindParam("quarter",$quarter);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		$data = $stmt->fetchAll();
+		if ($count>0) {
+			$contador = 0;
+			$actitud1 = 0;
+			$actitud2 = 0;
+			$actitud3 = 0;
+			$actitud4 = 0;
+			$actitud5 = 0;
+			$actitud6 = 0;
+			$desempeno1 = 0;
+			$desempeno2 = 0;
+			$desempeno3 = 0;
+			$desempeno4 = 0;
+			$desempeno5 = 0;
+			$desempeno6 = 0;
+			foreach ($data as $datum) {
+				$actitud1 = $actitud1 + $datum['actitud1'];
+				$actitud2 = $actitud2 + $datum['actitud2'];
+				$actitud3 = $actitud3 + $datum['actitud3'];
+				$actitud4 = $actitud4 + $datum['actitud4'];
+				$actitud5 = $actitud5 + $datum['actitud5'];
+				$actitud6 = $actitud6 + $datum['actitud6'];
+				$desempeno1 = $desempeno1 + $datum['desempeno1'];
+				$desempeno2 = $desempeno2 + $datum['desempeno2'];
+				$desempeno3 = $desempeno3 + $datum['desempeno3'];
+				$desempeno4 = $desempeno4 + $datum['desempeno4'];
+				$desempeno5 = $desempeno5 + $datum['desempeno5'];
+				$desempeno6 = $desempeno6 + $datum['desempeno6'];
+				$contador = $contador + 1;
+			}
+			$datos['actitud1'] = $actitud1 / $contador;
+			$datos['actitud2'] = $actitud2 / $contador;
+			$datos['actitud3'] = $actitud3 / $contador;
+			$datos['actitud4'] = $actitud4 / $contador;
+			$datos['actitud5'] = $actitud5 / $contador;
+			$datos['actitud6'] = $actitud6 / $contador;
+			$datos['desempeno1'] = $desempeno1 / $contador;
+			$datos['desempeno2'] = $desempeno2 / $contador;
+			$datos['desempeno3'] = $desempeno3 / $contador;
+			$datos['desempeno4'] = $desempeno4 / $contador;
+			$datos['desempeno5'] = $desempeno5 / $contador;
+			$datos['desempeno6'] = $desempeno6 / $contador;
+		} else {
+			$datos['actitud1'] = 0;
+			$datos['actitud2'] = 0;
+			$datos['actitud3'] = 0;
+			$datos['actitud4'] = 0;
+			$datos['actitud5'] = 0;
+			$datos['actitud6'] = 0;
+			$datos['desempeno1'] = 0;
+			$datos['desempeno2'] = 0;
+			$datos['desempeno3'] = 0;
+			$datos['desempeno4'] = 0;
+			$datos['desempeno5'] = 0;
+			$datos['desempeno6'] = 0;
+		}
+		return $datos;
+	}
+
+	public function promediosPlantilla4()
+	{
+		$db = getDB();
+		$stmt = $db->prepare("SELECT * FROM evaluacion_plantilla4 WHERE quarter = :quarter");
+		$quarter = ceil(date('m') / 4);
+		$stmt->bindParam("quarter",$quarter);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		$data = $stmt->fetchAll();
+		if ($count>0) {
+			$contador = 0;
+			$actitud1 = 0;
+			$actitud2 = 0;
+			$actitud3 = 0;
+			$actitud4 = 0;
+			$actitud5 = 0;
+			$actitud6 = 0;
+			$desempeno1 = 0;
+			$desempeno2 = 0;
+			$desempeno3 = 0;
+			$desempeno4 = 0;
+			foreach ($data as $datum) {
+				$actitud1 = $actitud1 + $datum['actitud1'];
+				$actitud2 = $actitud2 + $datum['actitud2'];
+				$actitud3 = $actitud3 + $datum['actitud3'];
+				$actitud4 = $actitud4 + $datum['actitud4'];
+				$actitud5 = $actitud5 + $datum['actitud5'];
+				$actitud6 = $actitud6 + $datum['actitud6'];
+				$desempeno1 = $desempeno1 + $datum['desempeno1'];
+				$desempeno2 = $desempeno2 + $datum['desempeno2'];
+				$desempeno3 = $desempeno3 + $datum['desempeno3'];
+				$desempeno4 = $desempeno4 + $datum['desempeno4'];
+				$contador = $contador + 1;
+			}
+			$datos['actitud1'] = $actitud1 / $contador;
+			$datos['actitud2'] = $actitud2 / $contador;
+			$datos['actitud3'] = $actitud3 / $contador;
+			$datos['actitud4'] = $actitud4 / $contador;
+			$datos['actitud5'] = $actitud5 / $contador;
+			$datos['actitud6'] = $actitud6 / $contador;
+			$datos['desempeno1'] = $desempeno1 / $contador;
+			$datos['desempeno2'] = $desempeno2 / $contador;
+			$datos['desempeno3'] = $desempeno3 / $contador;
+			$datos['desempeno4'] = $desempeno4 / $contador;
+		} else {
+			$datos['actitud1'] = 0;
+			$datos['actitud2'] = 0;
+			$datos['actitud3'] = 0;
+			$datos['actitud4'] = 0;
+			$datos['actitud5'] = 0;
+			$datos['actitud6'] = 0;
+			$datos['desempeno1'] = 0;
+			$datos['desempeno2'] = 0;
+			$datos['desempeno3'] = 0;
+			$datos['desempeno4'] = 0;
+		}
+		return $datos;
+	}
+
+	public function promediosPlantilla5()
+	{
+		$db = getDB();
+		$stmt = $db->prepare("SELECT * FROM evaluacion_plantilla5 WHERE quarter = :quarter");
+		$quarter = ceil(date('m') / 4);
+		$stmt->bindParam("quarter",$quarter);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		$data = $stmt->fetchAll();
+		if ($count>0) {
+			$contador = 0;
+			$desempeno1 = 0;
+			$desempeno2 = 0;
+			$desempeno3 = 0;
+			$desempeno4 = 0;
+			$desempeno5 = 0;
+			$desempeno6 = 0;
+			$desempeno7 = 0;
+			$desempeno8 = 0;
+			$desempeno9 = 0;
+			$desempeno10 = 0;
+			foreach ($data as $datum) {
+				$desempeno1 = $desempeno1 + $datum['desempeno1'];
+				$desempeno2 = $desempeno2 + $datum['desempeno2'];
+				$desempeno3 = $desempeno3 + $datum['desempeno3'];
+				$desempeno4 = $desempeno4 + $datum['desempeno4'];
+				$desempeno5 = $desempeno5 + $datum['desempeno5'];
+				$desempeno6 = $desempeno6 + $datum['desempeno6'];
+				$desempeno7 = $desempeno7 + $datum['desempeno7'];
+				$desempeno8 = $desempeno8 + $datum['desempeno8'];
+				$desempeno9 = $desempeno9 + $datum['desempeno9'];
+				$desempeno10 = $desempeno10 + $datum['desempeno10'];
+				$contador = $contador + 1;
+			}
+			$datos['desempeno1'] = $desempeno1 / $contador;
+			$datos['desempeno2'] = $desempeno2 / $contador;
+			$datos['desempeno3'] = $desempeno3 / $contador;
+			$datos['desempeno4'] = $desempeno4 / $contador;
+			$datos['desempeno5'] = $desempeno5 / $contador;
+			$datos['desempeno6'] = $desempeno6 / $contador;
+			$datos['desempeno7'] = $desempeno7 / $contador;
+			$datos['desempeno8'] = $desempeno8 / $contador;
+			$datos['desempeno9'] = $desempeno9 / $contador;
+			$datos['desempeno10'] = $desempeno10 / $contador;
+		} else {
+			$datos['desempeno1'] = 0;
+			$datos['desempeno2'] = 0;
+			$datos['desempeno3'] = 0;
+			$datos['desempeno4'] = 0;
+			$datos['desempeno5'] = 0;
+			$datos['desempeno6'] = 0;
+			$datos['desempeno7'] = 0;
+			$datos['desempeno8'] = 0;
+			$datos['desempeno9'] = 0;
+			$datos['desempeno10'] = 0;
+		}
+		return $datos;
+	}
 
 
 	public function storeEncuestaPlantilla1($POST)

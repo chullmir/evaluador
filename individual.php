@@ -12,22 +12,27 @@ $plantilla = plantilla($userData->sectorEvaluado);
 switch ($plantilla) {
 	case 'Plantilla Web':
 		$encuestas = $userClass->resultadosRedactores($_GET['uid']);
-		$promedios = $formClass->promediosWeb();		
+		$promedios = $formClass->promediosWeb();	
 		break;
 	case 'Plantilla1':
 		$encuestas = $userClass->resultadosPlantilla1($_GET['uid']);
+		$promedios = $formClass->promediosPlantilla1();
 		break;
 	case 'Plantilla2':
 		$encuestas = $userClass->resultadosPlantilla2($_GET['uid']);
+		$promedios = $formClass->promediosPlantilla2();
 		break;
 	case 'Plantilla3':
 		$encuestas = $userClass->resultadosPlantilla3($_GET['uid']);
+		$promedios = $formClass->promediosPlantilla3();
 		break;
 	case 'Plantilla4':
 		$encuestas = $userClass->resultadosPlantilla4($_GET['uid']);
+		$promedios = $formClass->promediosPlantilla4();
 		break;
 	case 'Plantilla5':
 		$encuestas = $userClass->resultadosPlantilla5($_GET['uid']);
+		$promedios = $formClass->promediosPlantilla5();
 		break;
 	
 	default:
@@ -171,6 +176,63 @@ echo $plantilla;
 				</tr>
 				<tr>
 					<td>Valores</td>
+
+					<?php if ($plantilla == "Plantilla1" || $plantilla == "Plantilla2" || $plantilla == "Plantilla3" || $plantilla == "Plantilla4"): ?>
+						<td><?= calificacion($encuestas['actitud1']) ?></td>
+						<td><?= calificacion($encuestas['actitud2']) ?></td>
+						<td><?= calificacion($encuestas['actitud3']) ?></td>
+						<td><?= calificacion($encuestas['actitud4']) ?></td>
+						<td><?= calificacion($encuestas['actitud5']) ?></td>
+						<td><?= calificacion($encuestas['actitud6']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla1"): ?>
+						<td><?= calificacion($encuestas['desempeno1']) ?></td>
+						<td><?= calificacion($encuestas['desempeno2']) ?></td>
+						<td><?= calificacion($encuestas['desempeno3']) ?></td>
+						<td><?= calificacion($encuestas['desempeno4']) ?></td>
+						<td><?= calificacion($encuestas['desempeno5']) ?></td>
+						<td><?= calificacion($encuestas['desempeno6']) ?></td>
+						<td><?= calificacion($encuestas['desempeno7']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla2"): ?>
+						<td><?= calificacion($encuestas['desempeno1']) ?></td>
+						<td><?= calificacion($encuestas['desempeno2']) ?></td>
+						<td><?= calificacion($encuestas['desempeno3']) ?></td>
+						<td><?= calificacion($encuestas['desempeno4']) ?></td>
+						<td><?= calificacion($encuestas['desempeno5']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla3"): ?>
+						<td><?= calificacion($encuestas['desempeno1']) ?></td>
+						<td><?= calificacion($encuestas['desempeno2']) ?></td>
+						<td><?= calificacion($encuestas['desempeno3']) ?></td>
+						<td><?= calificacion($encuestas['desempeno4']) ?></td>
+						<td><?= calificacion($encuestas['desempeno5']) ?></td>
+						<td><?= calificacion($encuestas['desempeno6']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla4"): ?>
+						<td><?= calificacion($encuestas['desempeno1']) ?></td>
+						<td><?= calificacion($encuestas['desempeno2']) ?></td>
+						<td><?= calificacion($encuestas['desempeno3']) ?></td>
+						<td><?= calificacion($encuestas['desempeno4']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla5"): ?>
+						<td><?= calificacion($encuestas['desempeno1']) ?></td>
+						<td><?= calificacion($encuestas['desempeno2']) ?></td>
+						<td><?= calificacion($encuestas['desempeno3']) ?></td>
+						<td><?= calificacion($encuestas['desempeno4']) ?></td>
+						<td><?= calificacion($encuestas['desempeno5']) ?></td>
+						<td><?= calificacion($encuestas['desempeno6']) ?></td>
+						<td><?= calificacion($encuestas['desempeno7']) ?></td>
+						<td><?= calificacion($encuestas['desempeno8']) ?></td>
+						<td><?= calificacion($encuestas['desempeno9']) ?></td>
+						<td><?= calificacion($encuestas['desempeno10']) ?></td>
+					<?php endif ?>
+		
 					<?php if ($plantilla == "Plantilla Web"): ?>
 						<td><?= calificacion($encuestas['actitud1']) ?></td>
 						<td><?= calificacion($encuestas['actitud2']) ?></td>
@@ -187,57 +249,87 @@ echo $plantilla;
 						
 					<?php endif ?>
 				</tr>
+
+				<tr>
+					<td>Promedios</td>
+
+					<?php if ($plantilla == "Plantilla1" || $plantilla == "Plantilla2" || $plantilla == "Plantilla3" || $plantilla == "Plantilla4"): ?>
+						<td><?= calificacion($promedios['actitud1']) ?></td>
+						<td><?= calificacion($promedios['actitud2']) ?></td>
+						<td><?= calificacion($promedios['actitud3']) ?></td>
+						<td><?= calificacion($promedios['actitud4']) ?></td>
+						<td><?= calificacion($promedios['actitud5']) ?></td>
+						<td><?= calificacion($promedios['actitud6']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla1"): ?>
+						<td><?= calificacion($promedios['desempeno1']) ?></td>
+						<td><?= calificacion($promedios['desempeno2']) ?></td>
+						<td><?= calificacion($promedios['desempeno3']) ?></td>
+						<td><?= calificacion($promedios['desempeno4']) ?></td>
+						<td><?= calificacion($promedios['desempeno5']) ?></td>
+						<td><?= calificacion($promedios['desempeno6']) ?></td>
+						<td><?= calificacion($promedios['desempeno7']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla2"): ?>
+						<td><?= calificacion($promedios['desempeno1']) ?></td>
+						<td><?= calificacion($promedios['desempeno2']) ?></td>
+						<td><?= calificacion($promedios['desempeno3']) ?></td>
+						<td><?= calificacion($promedios['desempeno4']) ?></td>
+						<td><?= calificacion($promedios['desempeno5']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla3"): ?>
+						<td><?= calificacion($promedios['desempeno1']) ?></td>
+						<td><?= calificacion($promedios['desempeno2']) ?></td>
+						<td><?= calificacion($promedios['desempeno3']) ?></td>
+						<td><?= calificacion($promedios['desempeno4']) ?></td>
+						<td><?= calificacion($promedios['desempeno5']) ?></td>
+						<td><?= calificacion($promedios['desempeno6']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla4"): ?>
+						<td><?= calificacion($promedios['desempeno1']) ?></td>
+						<td><?= calificacion($promedios['desempeno2']) ?></td>
+						<td><?= calificacion($promedios['desempeno3']) ?></td>
+						<td><?= calificacion($promedios['desempeno4']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla5"): ?>
+						<td><?= calificacion($promedios['desempeno1']) ?></td>
+						<td><?= calificacion($promedios['desempeno2']) ?></td>
+						<td><?= calificacion($promedios['desempeno3']) ?></td>
+						<td><?= calificacion($promedios['desempeno4']) ?></td>
+						<td><?= calificacion($promedios['desempeno5']) ?></td>
+						<td><?= calificacion($promedios['desempeno6']) ?></td>
+						<td><?= calificacion($promedios['desempeno7']) ?></td>
+						<td><?= calificacion($promedios['desempeno8']) ?></td>
+						<td><?= calificacion($promedios['desempeno9']) ?></td>
+						<td><?= calificacion($promedios['desempeno10']) ?></td>
+					<?php endif ?>
+		
+					<?php if ($plantilla == "Plantilla Web"): ?>
+						<td><?= calificacion($promedios['actitud1']) ?></td>
+						<td><?= calificacion($promedios['actitud2']) ?></td>
+						<td><?= calificacion($promedios['actitud3']) ?></td>
+						<td><?= calificacion($promedios['redaccion1']) ?></td>
+						<td><?= calificacion($promedios['redaccion2']) ?></td>
+						<td><?= calificacion($promedios['redaccion3']) ?></td>
+						<td><?= calificacion($promedios['redaccion4']) ?></td>
+						<td><?= calificacion($promedios['rigurosidad1']) ?></td>
+						<td><?= calificacion($promedios['rigurosidad2']) ?></td>
+					<?php endif ?>
+
+					<?php if ($plantilla == "Plantilla1"): ?>
+						
+					<?php endif ?>
+				</tr>
+
+
 			</tbody>
 		</table>
 		
-		<table>
-			<thead>
-				<tr>
-					<th></th>
-					<th colspan="3">Actitud</th>
-					<th colspan="4">Redacción</th>
-					<th colspan="2">Rigurosidad</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td></td>
-					<td>¿Reacciona rápido ante los pedidos de un editor?</td>
-					<td>¿Es proactivo ante situaciones de Breaking News?</td>
-					<td>¿Interactúa y colabora con el resto del equipo?</td>
-					<td>¿Tiene recursos narrativos?</td>
-					<td>¿Utiliza recursos multimedia?</td>
-					<td>¿Escribe sin errores de tipeo?</td>
-					<td>¿Escribe sin errores de sintaxis?</td>
-					<td>¿Rechequea datos / información antes de publicar?</td>
-					<td>¿Las fuentes o partes involucradas en la noticia están citadas y bien distinguidas?</td>
-				</tr>
-				<tr>
-					<td>Valores</td>
-					<td><?= calificacion($encuestas['actitud1']) ?></td>
-					<td><?= calificacion($encuestas['actitud2']) ?></td>
-					<td><?= calificacion($encuestas['actitud3']) ?></td>
-					<td><?= calificacion($encuestas['redaccion1']) ?></td>
-					<td><?= calificacion($encuestas['redaccion2']) ?></td>
-					<td><?= calificacion($encuestas['redaccion3']) ?></td>
-					<td><?= calificacion($encuestas['redaccion4']) ?></td>
-					<td><?= calificacion($encuestas['rigurosidad1']) ?></td>
-					<td><?= calificacion($encuestas['rigurosidad2']) ?></td>
-				</tr>
-				<tr>
-					<td>Promedio</td>
-					<td><?= calificacion($promedios['actitud1']) ?></td>
-					<td><?= calificacion($promedios['actitud2']) ?></td>
-					<td><?= calificacion($promedios['actitud3']) ?></td>
-					<td><?= calificacion($promedios['redaccion1']) ?></td>
-					<td><?= calificacion($promedios['redaccion2']) ?></td>
-					<td><?= calificacion($promedios['redaccion3']) ?></td>
-					<td><?= calificacion($promedios['redaccion4']) ?></td>
-					<td><?= calificacion($promedios['rigurosidad1']) ?></td>
-					<td><?= calificacion($promedios['rigurosidad2']) ?></td>
-				</tr>
-			</tbody>
-		</table>
 	</div>
 </body>
 </html>
