@@ -37,7 +37,7 @@ $evaluadosClass = new userClass();
 </head>
 <body>
 	<?php require_once 'componentes/navbar.php'; ?>
-	<div class="container">
+	<div class="container evaluar">
 
 		<h2>Personas</h2>
 		<?php

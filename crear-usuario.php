@@ -38,7 +38,7 @@ require_once 'functions/config.php';
 					<div class="col">
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="1" id="webCheck" name="web">
-							<label class="form-check-label" for="webCheck">Web</label>
+							<label class="form-check-label" for="webCheck">Redactor Web</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="checkbox" value="1" id="prodCheck" name="produccionTn">

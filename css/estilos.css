@@ -5,14 +5,28 @@
 body{
 	background: #ecfcff;
 }
+nav .navbar-toggler{
+	border: 1px solid #fff;
+	display: flex;
+	align-items: center;
+}
+nav .navbar-toggler span{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color:#fff;
+}
 .login{
 	margin-top: 25px;
 }
 .evaluar{
 	max-width: 800px;
 	margin-top: 30px;
+	background: red;
 }
-
+.evaluar ul{
+	list-style: none;
+}
 body nav{
 	background: #1a2849;
 }
