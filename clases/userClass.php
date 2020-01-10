@@ -71,6 +71,22 @@ class userClass{
 				echo '{"error":{"text":'. $e->getMessage() .'}}';	
 			}
 		}
+		public function newUser($POST)
+		{
+			try {
+				$conn = getDB();
+				$stmt = $conn->prepare("INSERT INTO users (name, lastname, email, sectorJefe, sectorEvaluado, profile) VALUES (:name, :lastname, :email, :sectorJefe, :sectorEvaluado, :profile)");
+				$stmt->bindParam(':name',$POST['name']);
+				$stmt->bindParam(':lastname',$POST['lastname']);
+				$stmt->bindParam(':email',$POST['email']);
+				// $stmt->bindParam(':sectorJefe',);
+				// $stmt->bindParam(':sectorEvaluado',);
+				// $stmt->bindParam(':profile',);
+				
+			} catch(PDOException $e) {
+				echo '{"error":{"text":'. $e->getMessage() .'}}';
+			}	
+		}
 		/* Users a Evaluar */
 		public function evaluadosPorSector($sector)
 		{

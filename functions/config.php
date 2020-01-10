@@ -6,14 +6,34 @@ $gClient->setClientId("20816500303-po6big42g4682otkfv195884s6edja3c.apps.googleu
 $gClient->setClientSecret("x0VsYt-1PXEoSPjTRfJxa_Zz");
 $gClient->setApplicationName("Haiv Login");
 
-// ----- LOCAL
-$gClient->setRedirectUri("http://localhost/evaluador/g-callback.php");
-$gClient->addScope("https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email");
-define('DB_SERVER','localhost');
-define('DB_USERNAME','root');
-define('DB_PASSWORD','');
-define('DB_DATABASE','tn');
-define('BASE_URL','http://localhost/evaluador/');
+if ($_SERVER["HTTP_HOST"]=='localhost') {
+	// ----- LOCAL	
+	$gClient->setRedirectUri("http://localhost/evaluador/g-callback.php");
+	$gClient->addScope("https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email");
+	define('DB_SERVER','localhost');
+	define('DB_USERNAME','root');
+	define('DB_PASSWORD','');
+	define('DB_DATABASE','tn');
+	define('BASE_URL','http://localhost/evaluador/');
+} else {
+	// ----- HOSTING
+	$gClient->setRedirectUri("http://serviciostn.online/evaluador/g-callback.php");
+	$gClient->addScope("https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email");
+	define('DB_SERVER','localhost'); // OK
+	define('DB_USERNAME','u458208539_paulo');
+	define('DB_PASSWORD','palicapo1'); 
+	define('DB_DATABASE','epiz_24173244_tn'); //OK
+	define('BASE_URL','http://paulo.epizy.com/evaluador/'); //OK
+};
+
+// // ----- LOCAL
+// $gClient->setRedirectUri("http://localhost/evaluador/g-callback.php");
+// $gClient->addScope("https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email");
+// define('DB_SERVER','localhost');
+// define('DB_USERNAME','root');
+// define('DB_PASSWORD','');
+// define('DB_DATABASE','tn');
+// define('BASE_URL','http://localhost/evaluador/');
 
 
 // ----- HOSTING

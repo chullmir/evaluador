@@ -4,7 +4,7 @@ Database: TN
 
 Tabla users:
 CREATE TABLE IF NOT EXISTS users (
-    `uid` INT,
+    `uid` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(13) CHARACTER SET utf8,
     `lastname` VARCHAR(18) CHARACTER SET utf8,
     `email` VARCHAR(20) CHARACTER SET utf8,

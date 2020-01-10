@@ -2,7 +2,7 @@
 require_once 'functions/config.php';
 $loginURL = $gClient->createAuthUrl();
 $pageTitle = "Login";
-
+var_dump($_SERVER["HTTP_HOST"]);
  ?>
 
 <!DOCTYPE html>

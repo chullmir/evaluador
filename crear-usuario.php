@@ -33,7 +33,19 @@ require_once 'functions/config.php';
 			</div>
 
 			<div class="form-group">
-				<label for="">Area</label>
+				<label for="sector">Sector</label>
+				<select class="custom-select" id="sector" name="sectorEvaluado">
+					<option selected>Seleccionar</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+				</select>
+			</div>
+
+
+
+			<div class="form-group">
+				<label for="">Área evaluada</label>
 				<div class="row">
 					<div class="col">
 						<div class="form-check">
